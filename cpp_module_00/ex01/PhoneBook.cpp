@@ -2,14 +2,19 @@
 
 class   ContactEntry {
 	private:
-		std::string FirstName;
-		std::string LastName;
-		std::string Nickname;
 		std::string PhoneNumber;
 		std::string DarkestSecret;
 	
 	public:
-		ContactEntry(std::string first, std::string last, std::string nick, std::string phone_num, std::string secret) {
+		std::string FirstName;
+		std::string LastName;
+		std::string Nickname;
+
+		ContactEntry() {
+
+		}
+
+		void	AddEntry(std::string first, std::string last, std::string nick, std::string phone_num, std::string secret) {
 			FirstName = first;
 			LastName = last;
 			Nickname = nick;
@@ -17,30 +22,58 @@ class   ContactEntry {
 			DarkestSecret = secret;
 		}
 
-		void	print_contact_row() {
-			std::cout << FirstName << ", " << LastName << ", " << Nickname << std::endl;
+		void	print_contact_row(int i) {
+			std::cout << "|" << i << "         |";
+			std::cout << FirstName << " |" << LastName << " |" << Nickname << " |" << std::endl;
+		}
+
+		std::string	getPhoneNumber() {
+			return (PhoneNumber);
+		}
+
+		std::string	getDarkestSecret() {
+			return (DarkestSecret);
+		}
+
+};
+
+class PhoneBook {
+	public:
+		int				ActualSize;
+		int				CurrentSize;
+		ContactEntry	contacts[8];
+		PhoneBook() {
+
 		}
 };
 
-/* class PhoneBook {
-	private:
-		Contact contacts[8];
+
+
+void    PrintPhoneBook(PhoneBook phonebook) {
+	int	index;
 	
-	public:
-		PhoneBook() {
-		}
-}; */
-
-
-
-void    PrintPhoneBook() {
 	std::cout << "=============================================" << std::endl;
 	std::cout << "|index     |first name|last name |nickname  |" << std::endl;
-	std::cout << "=============================================\n" << std::endl;
-
+	std::cout << "=============================================" << std::endl;
+	int	i = 0;
+	while (i < phonebook.ActualSize)
+	{
+		phonebook.contacts[i].print_contact_row(i);
+		i++;
+	}
+	std::cout << "Enter an index: ";
+	std::cin >> index;
+	if (index >= 0 && index <= phonebook.ActualSize)
+	{
+		std::cout << "First Name: " << phonebook.contacts[index].FirstName << std::endl;
+		std::cout << "Last Name: " << phonebook.contacts[index].LastName << std::endl;
+		std::cout << "Nickname: " << phonebook.contacts[index].Nickname << std::endl;
+		std::cout << "Phone Number: " << phonebook.contacts[index].getPhoneNumber() << std::endl;
+		std::cout << "Darkest Secret: " << phonebook.contacts[index].getDarkestSecret() << std::endl;
+	}
 }
 
-void    AddContact() {
+PhoneBook    AddContact(PhoneBook phonebook) {
 	std::string first;
 	std::string last;
 	std::string nickname;
@@ -57,12 +90,20 @@ void    AddContact() {
 	std::getline(std::cin, phone_num);
     std::cout << "Darkest Secret: ";
 	std::getline(std::cin, secret);
-	ContactEntry contact(first, last, nickname, phone_num, secret);
-	contact.print_contact_row();
+	if (phonebook.ActualSize < 8) {
+		phonebook.contacts[phonebook.ActualSize++].AddEntry(first, last, nickname, phone_num, secret);
+	}
+	else {
+		if (phonebook.CurrentSize > 8)
+			phonebook.CurrentSize = 0;
+		phonebook.contacts[phonebook.CurrentSize++].AddEntry(first, last, nickname, phone_num, secret);
+	}
+	return (phonebook);
 }
 
 int     main() {
 	std::string input;
+	PhoneBook	phonebook;
 
 	std::cout << "Enter a command: SEARCH - ADD - EXIT" << std::endl;
 	std::cout << "> ";
@@ -70,9 +111,9 @@ int     main() {
 		if (input == "EXIT")
 			return (0);
 		if (input == "SEARCH")
-			PrintPhoneBook();
+			PrintPhoneBook(phonebook);
 		if (input == "ADD")
-			AddContact();
+			phonebook = AddContact(phonebook);
 		std::cout << "> ";
 	}
 

@@ -6,13 +6,13 @@
 #    By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/15 12:16:04 by asfaihi           #+#    #+#              #
-#    Updated: 2021/10/15 12:17:50 by asfaihi          ###   ########.fr        #
+#    Updated: 2021/10/19 11:23:10 by asfaihi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PhoneBook
 
-SRC = 
+SRC = PhoneBook.cpp
 
 OBJECT = $(SRC:%.cpp=%.o)
 
