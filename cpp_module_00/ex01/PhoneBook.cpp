@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 16:58:15 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/10/22 16:50:59 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/10/22 17:06:17 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ int		main() {
 	std::string input;
 	PhoneBook	phonebook;
 
+	phonebook.ActualSize = 0;
+	phonebook.CurrentSize = 0;
 	std::cout << YELLOW << "ENTER A COMMAND: SEARCH - ADD - EXIT." << RESET << std::endl;
 	std::cout << "> ";
 	while (std::getline(std::cin, input)) {
