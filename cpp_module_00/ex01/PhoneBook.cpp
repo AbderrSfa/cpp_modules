@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 16:58:15 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/10/22 12:37:26 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/10/22 16:50:59 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,17 @@ void	PhoneBook::PrintPhoneBook( void ) const {
 	int		i;
 	int		index;
 
-	std::cout << "=============================================" << std::endl;
+	std::cout << BLUE << "=============================================" << std::endl;
 	std::cout << "|index     |first name|last name |nickname  |" << std::endl;
-	std::cout << "=============================================" << std::endl;
+	std::cout << "=============================================" << RESET << std::endl;
 	i = 0;
 	while (i < this->ActualSize) {
 		this->Contacts[i].PrintContactRow(i);
 		i++;
 	}
-	std::cout << "\tENTER AN INDEX: ";
+	std::cout << YELLOW << "ENTER AN INDEX: " << RESET;
 	std::cin >> index;
+	
 	if (index > -1 && index < this->ActualSize)
 	{
 		std::cout << "First Name: " << this->Contacts[index].getFirstName() << std::endl;
@@ -35,8 +36,10 @@ void	PhoneBook::PrintPhoneBook( void ) const {
 		std::cout << "Darkest Secret: " << this->Contacts[index].getDarkestSecret() << std::endl;
 	}
 	else {
-		std::cout << "\tINVALID INDEX." << std::endl;
+		std::cout << RED << "INVALID INDEX." << RESET << std::endl;
 	}
+	std::cin.clear();
+    std::cin.ignore(INT_MAX, '\n');
 }
 
 void	PhoneBook::AddContact( void ) {
@@ -49,15 +52,15 @@ void	PhoneBook::AddContact( void ) {
 	std::string aPhoneNumber;
 	std::string aDarkestSecret;
 
-	std::cout << "First Name: ";
+	std::cout << GREEN << "First Name: " << RESET;
 	std::getline(std::cin, aFirstName);
-	std::cout << "Last Name: ";
+	std::cout << GREEN << "Last Name: " << RESET;
 	std::getline(std::cin, aLastName);
-	std::cout << "Nickname: ";
+	std::cout << GREEN << "Nickname: " << RESET;
 	std::getline(std::cin, aNickname);
-	std::cout << "Phone Number: ";
+	std::cout << GREEN << "Phone Number: " << RESET;
 	std::getline(std::cin, aPhoneNumber);
-	std::cout << "Darkest Secret: ";
+	std::cout << GREEN << "Darkest Secret: " << RESET;
 	std::getline(std::cin, aDarkestSecret);
 
 	if (this->ActualSize < 8) {
@@ -73,7 +76,7 @@ void	PhoneBook::AddContact( void ) {
 	}
 	
 	this->Contacts[i].setFirstName(aFirstName);
-	this->Contacts[i].setLastName(aFirstName);
+	this->Contacts[i].setLastName(aLastName);
 	this->Contacts[i].setNickname(aNickname);
 	this->Contacts[i].setPhoneNumber(aPhoneNumber);
 	this->Contacts[i].setDarkestSecret(aDarkestSecret);
@@ -83,7 +86,7 @@ int		main() {
 	std::string input;
 	PhoneBook	phonebook;
 
-	std::cout << "\tENTER A COMMAND: SEARCH - ADD - EXIT." << std::endl;
+	std::cout << YELLOW << "ENTER A COMMAND: SEARCH - ADD - EXIT." << RESET << std::endl;
 	std::cout << "> ";
 	while (std::getline(std::cin, input)) {
 		if (input == "EXIT")
@@ -93,7 +96,7 @@ int		main() {
 		else if (input == "SEARCH")
 			phonebook.PrintPhoneBook();
 		else if (input != "")
-			std::cout << "\tINVALID COMMAND." << std::endl;
+			std::cout << RED << "INVALID COMMAND." << RESET << std::endl;
 		std::cout << "> ";
 	}
 	return (0);

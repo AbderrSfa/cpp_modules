@@ -6,14 +6,15 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 16:58:17 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/10/22 12:39:41 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/10/22 16:48:11 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-#include <iostream>
+# include <iostream>
+# include <iomanip>
 
 # define GREEN "\e[1;32m"
 # define RESET "\e[0m"
