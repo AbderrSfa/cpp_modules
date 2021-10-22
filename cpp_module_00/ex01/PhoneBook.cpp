@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 16:58:15 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/10/22 12:18:13 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/10/22 12:37:26 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	PhoneBook::PrintPhoneBook( void ) const {
 		this->Contacts[i].PrintContactRow(i);
 		i++;
 	}
-	std::cout << "ENTER AN INDEX: ";
+	std::cout << "\tENTER AN INDEX: ";
 	std::cin >> index;
 	if (index > -1 && index < this->ActualSize)
 	{
@@ -33,6 +33,9 @@ void	PhoneBook::PrintPhoneBook( void ) const {
 		std::cout << "Nickname: " << this->Contacts[index].getNickname() << std::endl;
 		std::cout << "Phone Number: " << this->Contacts[index].getPhoneNumber() << std::endl;
 		std::cout << "Darkest Secret: " << this->Contacts[index].getDarkestSecret() << std::endl;
+	}
+	else {
+		std::cout << "\tINVALID INDEX." << std::endl;
 	}
 }
 
@@ -80,15 +83,17 @@ int		main() {
 	std::string input;
 	PhoneBook	phonebook;
 
-	std::cout << "ENTER A COMMAND: SEARCH - ADD - EXIT" << std::endl;
+	std::cout << "\tENTER A COMMAND: SEARCH - ADD - EXIT." << std::endl;
 	std::cout << "> ";
 	while (std::getline(std::cin, input)) {
 		if (input == "EXIT")
 			return (0);
-		else if (input == "SEARCH")
-			phonebook.PrintPhoneBook();
 		else if (input == "ADD")
 			phonebook.AddContact();
+		else if (input == "SEARCH")
+			phonebook.PrintPhoneBook();
+		else if (input != "")
+			std::cout << "\tINVALID COMMAND." << std::endl;
 		std::cout << "> ";
 	}
 	return (0);
