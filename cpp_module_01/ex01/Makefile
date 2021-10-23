@@ -1,6 +1,6 @@
-NAME = Zombie
+NAME = ZombieHorde
 
-SRC = Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
+SRC = main.cpp Zombie.cpp ZombieHorde.cpp
 
 HEADER = Zombie.hpp
 

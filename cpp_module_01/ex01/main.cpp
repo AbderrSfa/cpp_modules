@@ -1,11 +1,13 @@
 #include "Zombie.hpp"
 
 int		main() {
-	Zombie	StackZombie("StackZombie");
-	Zombie*	HeapZombie = newZombie("HeapZombie");
+	int		N = 3;
+	int		i = 0;
+	Zombie*	Zombies = zombieHorde(N, "BrainEater");
 
-	StackZombie.announce();
-	HeapZombie->announce();
-	randomChump("Chump");
-	delete HeapZombie;
+	while (i < N) {
+		Zombies[i].announce();
+		i++;
+	}
+	delete [] Zombies;
 }
