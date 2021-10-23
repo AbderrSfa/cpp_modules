@@ -24,16 +24,17 @@ void	PhoneBook::PrintPhoneBook( void ) const {
 		this->Contacts[i].PrintContactRow(i);
 		i++;
 	}
-	std::cout << YELLOW << "ENTER AN INDEX: " << RESET;
+	std::cout << BLUE << "=============================================" << RESET << std::endl;
+	std::cout << std::endl << YELLOW << "ENTER AN INDEX: " << RESET;
 	std::cin >> index;
 	
 	if (index > -1 && index < this->ActualSize)
 	{
-		std::cout << "First Name: " << this->Contacts[index].getFirstName() << std::endl;
-		std::cout << "Last Name: " << this->Contacts[index].getLastName() << std::endl;
-		std::cout << "Nickname: " << this->Contacts[index].getNickname() << std::endl;
-		std::cout << "Phone Number: " << this->Contacts[index].getPhoneNumber() << std::endl;
-		std::cout << "Darkest Secret: " << this->Contacts[index].getDarkestSecret() << std::endl;
+		std::cout << GREEN << "First Name: " << RESET << this->Contacts[index].getFirstName() << std::endl;
+		std::cout << GREEN << "Last Name: " << RESET << this->Contacts[index].getLastName() << std::endl;
+		std::cout << GREEN << "Nickname: " << RESET << this->Contacts[index].getNickname() << std::endl;
+		std::cout << GREEN << "Phone Number: " << RESET << this->Contacts[index].getPhoneNumber() << std::endl;
+		std::cout << GREEN << "Darkest Secret: " << RESET << this->Contacts[index].getDarkestSecret() << std::endl;
 	}
 	else {
 		std::cout << RED << "INVALID INDEX." << RESET << std::endl;

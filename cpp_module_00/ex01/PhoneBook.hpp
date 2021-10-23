@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <iomanip>
+# include <limits.h>
 
 # define GREEN "\e[1;32m"
 # define RESET "\e[0m"
