@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include "Contact.hpp"
 
 void	PhoneBook::PrintPhoneBook( void ) const {
 	int		i;
