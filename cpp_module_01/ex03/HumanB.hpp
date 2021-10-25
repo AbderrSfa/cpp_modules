@@ -10,7 +10,7 @@ class	HumanB {
 		Weapon*		_Weapon;
 	
 	public:
-		HumanB(std::string aName) : _Name(aName) {}
+		HumanB(std::string aName);
 		~HumanB() {}
 		
 		void	attack( void ) const;
