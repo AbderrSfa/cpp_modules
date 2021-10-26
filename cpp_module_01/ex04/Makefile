@@ -6,7 +6,7 @@
 #    By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 13:05:38 by asfaihi           #+#    #+#              #
-#    Updated: 2021/10/25 13:40:41 by asfaihi          ###   ########.fr        #
+#    Updated: 2021/10/26 12:16:26 by asfaihi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ $(NAME): $(OBJECT)
 
 clean:
 	/bin/rm -f $(OBJECT)
-	/bin/rm -f new.out
+	/bin/rm -f *.replace
 
 fclean: clean
 	/bin/rm -f $(NAME)
