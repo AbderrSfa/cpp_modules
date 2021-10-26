@@ -6,11 +6,11 @@
 #    By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 13:05:38 by asfaihi           #+#    #+#              #
-#    Updated: 2021/10/26 12:20:13 by asfaihi          ###   ########.fr        #
+#    Updated: 2021/10/26 13:10:17 by asfaihi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = replace
+NAME = Karen
 
 SRC = main.cpp Karen.cpp
 
