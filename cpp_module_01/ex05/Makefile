@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/10/25 13:05:47 by asfaihi           #+#    #+#              #
-#    Updated: 2021/10/26 12:19:55 by asfaihi          ###   ########.fr        #
+#    Created: 2021/10/25 13:05:38 by asfaihi           #+#    #+#              #
+#    Updated: 2021/10/26 12:20:13 by asfaihi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Violence
+NAME = replace
 
-SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRC = main.cpp Karen.cpp
 
-HEADERS = Weapon.hpp HumanA.hpp HumanB.hpp
+HEADERS = Karen.hpp
 
 OBJECT = $(SRC:%.cpp=%.o)
 
