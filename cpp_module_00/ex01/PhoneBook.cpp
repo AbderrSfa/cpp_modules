@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 16:58:15 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/10/22 17:06:17 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/10/28 18:00:15 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ void	PhoneBook::PrintPhoneBook( void ) const {
 	int		i;
 	int		index;
 
-	std::cout << BLUE << "=============================================" << std::endl;
+	std::cout << BLUE << "+===========================================+" << std::endl;
 	std::cout << "|index     |first name|last name |nickname  |" << std::endl;
-	std::cout << "=============================================" << RESET << std::endl;
+	std::cout << "+===========================================+" << RESET << std::endl;
 	i = 0;
 	while (i < this->ActualSize) {
 		this->Contacts[i].PrintContactRow(i);
 		i++;
 	}
-	std::cout << BLUE << "=============================================" << RESET << std::endl;
+	std::cout << "+-------------------------------------------+" << std::endl;
 	std::cout << std::endl << YELLOW << "ENTER AN INDEX: " << RESET;
 	std::cin >> index;
 	
