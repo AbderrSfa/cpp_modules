@@ -13,9 +13,11 @@
 #include "Fixed.hpp"
 
 int main( void ) {
-	Fixed a(42.42f);
-	Fixed b(42.42f);
-	
+	Fixed a(42.01f);
+	Fixed b(42.01f);
+	Fixed c;
+
+	c = a - b;
 	//Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
 /* 	std::cout << a << std::endl;
@@ -26,6 +28,7 @@ int main( void ) {
 
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
+	std::cout << c << std::endl;
 	if (a != b)
 		std::cout << "TRUE" << std::endl;
 	else

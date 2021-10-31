@@ -46,49 +46,41 @@ Fixed::~Fixed( void ) {
 // Comparison Operators
 
 bool	Fixed::operator>( Fixed const & rhs ) const {
-	if (this->_FixedPointVal > rhs._FractionalBits)
-		return (true);
-	return (false);
+	return (this->_FixedPointVal > rhs._FixedPointVal);
 }
 
 bool	Fixed::operator<( Fixed const & rhs ) const {
-	if (this->_FixedPointVal < rhs._FractionalBits)
-		return (true);
-	return (false);
+	return (this->_FixedPointVal < rhs._FixedPointVal);
 }
 
 bool	Fixed::operator>=( Fixed const & rhs ) const {
-	if (this->_FixedPointVal >= rhs._FractionalBits)
-		return (true);
-	return (false);
+	return (this->_FixedPointVal >= rhs._FixedPointVal);
 }
 
 bool	Fixed::operator<=( Fixed const & rhs ) const {
-	if (this->_FixedPointVal <= rhs._FractionalBits)
-		return (true);
-	return (false);
+	return (this->_FixedPointVal <= rhs._FixedPointVal);
 }
 
 bool	Fixed::operator==( Fixed const & rhs ) const {
-	if (this->_FixedPointVal == rhs._FractionalBits)
-		return (true);
-	return (false);
+	return (this->_FixedPointVal == rhs._FixedPointVal);
 }
 
 bool	Fixed::operator!=( Fixed const & rhs ) const {
-	if (this->_FixedPointVal != rhs._FractionalBits)
-		return (true);
-	return (false);
+	return (this->_FixedPointVal != rhs._FixedPointVal);
 }
 
 // Arithmetic Operators
 
 Fixed	Fixed::operator+( Fixed const & rhs ) const {
-	return Fixed( this->_FixedPointVal + rhs._FixedPointVal );
+	Fixed	temp;
+	temp.setRawBits(this->_FixedPointVal + rhs._FixedPointVal);
+	return (temp);
 }
 
 Fixed	Fixed::operator-( Fixed const & rhs ) const {
-	return Fixed( this->_FixedPointVal - rhs._FixedPointVal );
+	Fixed	temp;
+	temp.setRawBits(this->_FixedPointVal - rhs._FixedPointVal);
+	return (temp);
 }
 
 Fixed	Fixed::operator*( Fixed const & rhs ) const {
