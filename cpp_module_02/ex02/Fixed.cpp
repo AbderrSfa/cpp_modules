@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 14:39:04 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/10/31 15:53:58 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/10/31 16:23:04 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,47 @@ Fixed &	Fixed::operator++( void ) {
 	return (*this);
 }
 
+Fixed &	Fixed::operator--( void ) {
+	this->_FixedPointVal--;
+	return (*this);
+}
+
 Fixed	Fixed::operator++( int ) {
-	return (Fixed());
+	Fixed	temp(*this);
+	this->operator++();
+	return (temp);
+}
+
+Fixed	Fixed::operator--( int ) {
+	Fixed	temp(*this);
+	this->operator--();
+	return (temp);
+}
+
+// Min / Max
+
+Fixed &	Fixed::min( Fixed & one, Fixed & two ) {
+	if (one < two)
+		return (one);
+	return (two);
+}
+
+Fixed const &	Fixed::min( Fixed const & one, Fixed const & two ) {
+	if (one < two)
+		return (one);
+	return (two);
+}
+
+Fixed &	Fixed::max( Fixed & one, Fixed & two ) {
+	if (one > two)
+		return (one);
+	return (two);
+}
+
+Fixed  const &	Fixed::max( Fixed const & one, Fixed const & two ) {
+	if (one > two)
+		return (one);
+	return (two);
 }
 
 // Getter and Setter
