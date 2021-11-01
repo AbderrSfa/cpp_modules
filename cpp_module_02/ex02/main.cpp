@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 14:39:24 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/10/31 16:20:27 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/10/31 16:26:42 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,8 @@
 
 int main( void ) {
 	Fixed		a;
-	Fixed const	b(5.05f);
-
-/* 	std::cout << a << std::endl;
-	//std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	//std::cout << a++ << std::endl;
-	std::cout << a << std::endl; */
+	Fixed const	b( Fixed( 5.05f ) * Fixed( 2 ) );
 	
-
 	std::cout << a << std::endl;
 	std::cout << ++a << std::endl;
 	std::cout << a << std::endl;
