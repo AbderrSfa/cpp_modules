@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:16:57 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/02 10:11:22 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/02 10:52:49 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 #include "FragTrap.hpp"
 
 int     main() {
-    ClapTrap    Abderr("Abderr");
-    ClapTrap    Adam("Adam");
-    ScavTrap    yoink("Babooch");
+    ClapTrap    Babooch("\e[1;32mBabooch\e[0m");
+    ScavTrap    Adam("\e[1;32mAdam\e[0m");
+    FragTrap    Aya("\e[1;32mAya\e[0m");
 
-    yoink.attack("Abderr");
-    Abderr.takeDamage(10);
-    Abderr.beRepaired(5);
-    yoink.guardGate();
+    Adam.attack("Babooch");
+    Babooch.takeDamage(Adam.getAttackDamage());
+    Babooch.beRepaired(Babooch.getEnergyPoints());
+    Adam.guardGate();
+    Aya.highFivesGuys();
 }
