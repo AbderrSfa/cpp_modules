@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 12:43:45 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/02 10:32:33 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/02 15:34:48 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class   ScavTrap : public ClapTrap {
 		//ScavTrap &  operator=(ScavTrap const & rhs);
 		~ScavTrap();
 
-		void	guardGate( void );
+		void	guardGate( void ) const ;
 };
 
 #endif

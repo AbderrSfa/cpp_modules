@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 10:10:59 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/02 10:43:01 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/02 15:34:28 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class   FragTrap : public ClapTrap {
 		//FragTrap &  operator=(FragTrap const & rhs);
 		~FragTrap();
 
-		void	highFivesGuys( void );
+		void	highFivesGuys( void ) const ;
 };
 
 #endif

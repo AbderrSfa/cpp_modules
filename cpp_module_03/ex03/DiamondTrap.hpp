@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 10:55:27 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/02 12:01:03 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/02 15:36:21 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class   DiamondTrap : public ScavTrap, public FragTrap {
 		//DiamondTrap &  operator=(DiamondTrap const & rhs);
 		~DiamondTrap();
 	
-		void	whoAmI( void );
+		void	whoAmI( void ) const ;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 10:55:34 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/02 12:03:14 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/02 15:36:29 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ DiamondTrap::~DiamondTrap() {
 	std::cout << "DiamondTrap " << this->_Name << " died." << std::endl;    
 }
 
-void	DiamondTrap::whoAmI( void ) {
+void	DiamondTrap::whoAmI( void ) const {
 	std::cout << "DiamondTrap name: " << this->_Name << " -- ClapTrap name: " << this->getName() << std::endl;    
 }

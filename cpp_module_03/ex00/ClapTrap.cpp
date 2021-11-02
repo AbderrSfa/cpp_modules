@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:17:01 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/02 10:35:34 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/02 15:32:57 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,14 @@ void	ClapTrap::setAttackDamage(int aAttackDamage) {
 
 /// Getters
 
-std::string	ClapTrap::getName( void ) { return (this->_Name); }
-int		ClapTrap::getAttackDamage( void ) { return (this->_AttackDamage); }
-int		ClapTrap::getEnergyPoints( void ) { return (this->_EnergyPoints); }
-int		ClapTrap::getHitPoints( void ) { return (this->_Hitpoints); }
+std::string	ClapTrap::getName( void ) const { return (this->_Name); }
+int		ClapTrap::getAttackDamage( void ) const { return (this->_AttackDamage); }
+int		ClapTrap::getEnergyPoints( void ) const { return (this->_EnergyPoints); }
+int		ClapTrap::getHitPoints( void ) const { return (this->_Hitpoints); }
 
 /// Member functions
 
-void    ClapTrap::attack(std::string const & target) {
+void    ClapTrap::attack(std::string const & target) const {
 	std::cout << "ClapTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
 }
 
