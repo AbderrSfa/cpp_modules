@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:17:01 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/02 10:07:19 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/02 10:35:15 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ void	ClapTrap::setName(std::string aName) {
 }
 
 void	ClapTrap::setHitpoints(int aHitPoints) {
-	this->_Hitpoints -= aHitPoints;
+	this->_Hitpoints = aHitPoints;
 }
 
 void	ClapTrap::setEnergyPoints(int aEnergyPoints) {
-	this->_EnergyPoints += aEnergyPoints;
+	this->_EnergyPoints = aEnergyPoints;
 }
 
 void	ClapTrap::setAttackDamage(int aAttackDamage) {
@@ -63,10 +63,10 @@ void    ClapTrap::attack(std::string const & target) {
 
 void    ClapTrap::takeDamage(unsigned int amount) {
 	std::cout << "ClapTrap " << this->getName() << " took " << amount << " points of damage." << std::endl;
-	this->setHitpoints(amount);
+	this->_Hitpoints -= amount;
 }
 
 void    ClapTrap::beRepaired(unsigned int amount) {
 	std::cout << "ClapTrap " << this->getName() << " repaired life points by " << amount << "." << std::endl;
-	this->setEnergyPoints(amount);
+	this->_EnergyPoints += amount;
 }
