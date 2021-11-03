@@ -22,11 +22,15 @@ Cat::Cat(Cat const & src) {
 	*this = src;
 }
 
-/* Cat &  Cat::operator=(Cat const & rhs) {
-	*this = rhs;
+Cat &  Cat::operator=(Cat const & rhs) {
+	this->type = rhs.type;
 	return *this;
-} */
+}
 
 Cat::~Cat() {
 	std::cout << "Cat died." << std::endl;
+}
+
+void	Cat::makeSound( void ) const {
+	std::cout << "Meeeooowww!" << std::endl;
 }

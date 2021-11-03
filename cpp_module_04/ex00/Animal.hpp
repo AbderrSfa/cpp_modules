@@ -23,12 +23,12 @@ class   Animal {
 		Animal( void );
 		Animal(Animal const & src);
 		//Animal &	operator=(Animal const & rhs);
-		~Animal();
+		virtual ~Animal();
 
 		std::string	getType( void ) const ;
 		void		setType(std::string aType);
 
-		void		makeSound( void ) const ;
+		virtual void		makeSound( void ) const ;
 };
 
 #endif

@@ -30,3 +30,7 @@ Dog::Dog(Dog const & src) {
 Dog::~Dog() {
 	std::cout << "Dog died." << std::endl;
 }
+
+void	Dog::makeSound( void ) const {
+	std::cout << "Ruff Ruff!" << std::endl;
+}
