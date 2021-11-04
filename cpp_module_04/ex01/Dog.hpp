@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:33:33 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/04 10:17:43 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/04 10:48:15 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 # define DOG_HPP
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class   Dog : public Animal {
+	private:
+		Brain	*_brain;
+
 	public:
 		Dog( void );
 		Dog(Dog const & src);

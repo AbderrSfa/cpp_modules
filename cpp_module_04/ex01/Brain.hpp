@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 10:27:35 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/04 10:28:39 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/04 14:09:15 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,13 @@
 # include <iostream>
 
 class	Brain {
-	
+	public:
+		Brain( void );
+		Brain(Brain const & src);
+		Brain &	operator=(Brain const & rhs);
+		~Brain();
+
+		std::string* ideas;
 };
 
 #endif

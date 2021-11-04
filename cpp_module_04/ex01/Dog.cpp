@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:33:30 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/04 10:18:41 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/04 11:51:56 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Dog::Dog( void ) : Animal() {
     this->setType("Dog");
 	std::cout << "Dog is born." << std::endl;
+	this->_brain = new Brain();
 }
 
 Dog::Dog(Dog const & src) {
@@ -28,6 +29,7 @@ Dog &  Dog::operator=(Dog const & rhs) {
 }
 
 Dog::~Dog() {
+	delete this->_brain;
 	std::cout << "Dog died." << std::endl;
 }
 
