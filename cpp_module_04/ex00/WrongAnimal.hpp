@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 14:13:04 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/04 09:36:38 by asfaihi          ###   ########.fr       */
+/*   Created: 2021/11/04 09:39:06 by asfaihi           #+#    #+#             */
+/*   Updated: 2021/11/04 09:43:37 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 # include <iostream>
 
-class   Animal {
+class   WrongAnimal {
 	protected:
 		std::string type;
 
 	public:
-		Animal( void );
-		Animal(Animal const & src);
-		//Animal &	operator=(Animal const & rhs);
-		virtual ~Animal();
+		WrongAnimal( void );
+		WrongAnimal(WrongAnimal const & src);
+		//WrongAnimal &	operator=(WrongAnimal const & rhs);
+		virtual ~WrongAnimal();
 
 		std::string	getType( void ) const ;
 		void		setType(std::string aType);

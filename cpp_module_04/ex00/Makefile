@@ -6,15 +6,15 @@
 #    By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 13:05:38 by asfaihi           #+#    #+#              #
-#    Updated: 2021/11/02 14:34:02 by asfaihi          ###   ########.fr        #
+#    Updated: 2021/11/04 09:49:34 by asfaihi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = a.out
 
-SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp
+SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 
-HEADERS = Animal.hpp Cat.hpp Dog.hpp
+HEADERS = Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
 
 OBJECT = $(SRC:%.cpp=%.o)
 
