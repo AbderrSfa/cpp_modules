@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:33:30 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/02 15:00:22 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/04 10:18:41 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ Dog::Dog(Dog const & src) {
 	*this = src;
 }
 
-/* Dog &  Dog::operator=(Dog const & rhs) {
-	*this = rhs;
+Dog &  Dog::operator=(Dog const & rhs) {
+	this->type = rhs.type;
 	return *this;
-} */
+}
 
 Dog::~Dog() {
 	std::cout << "Dog died." << std::endl;

@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 09:38:50 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/04 09:44:07 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/04 10:18:50 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ WrongAnimal::WrongAnimal(WrongAnimal const & src) {
 	*this = src;
 }
 
-/* WrongAnimal &  WrongAnimal::operator=(WrongAnimal const & rhs) {
-	*this = rhs;
+WrongAnimal &  WrongAnimal::operator=(WrongAnimal const & rhs) {
+	this->type = rhs.type;
 	return *this;
-} */
+}
 
 WrongAnimal::~WrongAnimal() {
 	std::cout << "WrongAnimal died." << std::endl;	

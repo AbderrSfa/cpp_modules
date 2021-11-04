@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:13:04 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/04 09:36:38 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/04 10:17:47 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class   Animal {
 	public:
 		Animal( void );
 		Animal(Animal const & src);
-		//Animal &	operator=(Animal const & rhs);
+		Animal &	operator=(Animal const & rhs);
 		virtual ~Animal();
 
 		std::string	getType( void ) const ;
