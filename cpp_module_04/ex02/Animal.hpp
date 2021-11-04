@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:13:04 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/04 10:43:55 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/04 14:29:02 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class   Animal {
 		std::string	getType( void ) const ;
 		void		setType(std::string aType);
 
-		virtual void		makeSound( void ) const ;
+		virtual void		makeSound( void ) const = 0;
 };
 
 #endif
