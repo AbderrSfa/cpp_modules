@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/10/25 13:06:27 by asfaihi           #+#    #+#              #
-#    Updated: 2021/11/05 12:52:00 by asfaihi          ###   ########.fr        #
+#    Created: 2021/10/25 13:05:38 by asfaihi           #+#    #+#              #
+#    Updated: 2021/11/05 12:55:28 by asfaihi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ZombieHorde
+NAME = a.out
 
-SRC = main.cpp Zombie.cpp ZombieHorde.cpp
+SRC = main.cpp Bureaucrat.cpp
 
-HEADER = Zombie.hpp
+HEADERS = Bureaucrat.hpp
 
 OBJECT = $(SRC:%.cpp=%.o)
 
@@ -25,7 +25,7 @@ all: $(NAME)
 $(NAME): $(OBJECT)
 	clang++ $(OBJECT) -o $(NAME)
 
-%.o:%.cpp $(HEADER)
+%.o:%.cpp $(HEADERS)
 	clang++ $(FLAGS) -std=c++98 -c $<
 
 clean:

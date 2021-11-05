@@ -6,7 +6,7 @@
 #    By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 13:06:43 by asfaihi           #+#    #+#              #
-#    Updated: 2021/10/25 13:06:44 by asfaihi          ###   ########.fr        #
+#    Updated: 2021/11/05 12:51:55 by asfaihi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ $(NAME): $(OBJECT)
 	clang++ $(OBJECT) -o $(NAME)
 
 %.o:%.cpp $(HEADER)
-	clang++ $(FLAGS) -c $<
+	clang++ $(FLAGS) -std=c++98 -c $<
 
 clean:
 	/bin/rm -f $(OBJECT)
