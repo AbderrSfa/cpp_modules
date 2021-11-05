@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 16:58:17 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/10/22 16:48:11 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/05 10:07:54 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,20 @@
 # define BLUE "\e[1;34m"
 
 class   PhoneBook {
-	public:
-		int				ActualSize;
-		int				CurrentSize;
-		Contact			Contacts[8];
-		
+	private:
+		int				_ActualSize;
+		int				_CurrentSize;
+		Contact			_Contacts[8];
+	
+	public:		
 		PhoneBook() {};
 		~PhoneBook() {};
+
+		int		getActualSize( void ) const ;
+		int		getCurrentSize( void ) const ;
+		
+		void	setActualSize( int aSize );
+		void	setCurrentSize( int cSize );
 
 		void	PrintPhoneBook( void ) const ;
 		void	AddContact( void ) ;

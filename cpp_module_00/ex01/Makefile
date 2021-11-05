@@ -6,7 +6,7 @@
 #    By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/15 12:16:04 by asfaihi           #+#    #+#              #
-#    Updated: 2021/10/22 12:22:50 by asfaihi          ###   ########.fr        #
+#    Updated: 2021/11/05 09:37:31 by asfaihi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = PhoneBook
 
 SRC = PhoneBook.cpp Contact.cpp
 
-HEADER = PhoneBook.hpp
+HEADER = PhoneBook.hpp Contact.hpp
 
 OBJECT = $(SRC:%.cpp=%.o)
 

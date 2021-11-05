@@ -6,12 +6,20 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 16:58:15 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/10/28 18:00:15 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/05 10:20:09 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
+
+int		PhoneBook::getActualSize( void ) const { return (this->_ActualSize); }
+
+int		PhoneBook::getCurrentSize( void ) const { return (this->_CurrentSize); }
+
+void	PhoneBook::setActualSize( int aSize ) { this->_ActualSize = aSize; }
+
+void	PhoneBook::setCurrentSize( int cSize ) { this->_CurrentSize = cSize; }
 
 void	PhoneBook::PrintPhoneBook( void ) const {
 	int		i;
@@ -21,21 +29,20 @@ void	PhoneBook::PrintPhoneBook( void ) const {
 	std::cout << "|index     |first name|last name |nickname  |" << std::endl;
 	std::cout << "+===========================================+" << RESET << std::endl;
 	i = 0;
-	while (i < this->ActualSize) {
-		this->Contacts[i].PrintContactRow(i);
+	while (i < this->_ActualSize) {
+		this->_Contacts[i].PrintContactRow(i);
 		i++;
 	}
 	std::cout << "+-------------------------------------------+" << std::endl;
 	std::cout << std::endl << YELLOW << "ENTER AN INDEX: " << RESET;
 	std::cin >> index;
-	
-	if (index > -1 && index < this->ActualSize)
+	if (!std::cin.fail() && index > -1 && index < this->_ActualSize)
 	{
-		std::cout << GREEN << "First Name: " << RESET << this->Contacts[index].getFirstName() << std::endl;
-		std::cout << GREEN << "Last Name: " << RESET << this->Contacts[index].getLastName() << std::endl;
-		std::cout << GREEN << "Nickname: " << RESET << this->Contacts[index].getNickname() << std::endl;
-		std::cout << GREEN << "Phone Number: " << RESET << this->Contacts[index].getPhoneNumber() << std::endl;
-		std::cout << GREEN << "Darkest Secret: " << RESET << this->Contacts[index].getDarkestSecret() << std::endl;
+		std::cout << GREEN << "First Name: " << RESET << this->_Contacts[index].getFirstName() << std::endl;
+		std::cout << GREEN << "Last Name: " << RESET << this->_Contacts[index].getLastName() << std::endl;
+		std::cout << GREEN << "Nickname: " << RESET << this->_Contacts[index].getNickname() << std::endl;
+		std::cout << GREEN << "Phone Number: " << RESET << this->_Contacts[index].getPhoneNumber() << std::endl;
+		std::cout << GREEN << "Darkest Secret: " << RESET << this->_Contacts[index].getDarkestSecret() << std::endl;
 	}
 	else {
 		std::cout << RED << "INVALID INDEX." << RESET << std::endl;
@@ -65,31 +72,31 @@ void	PhoneBook::AddContact( void ) {
 	std::cout << GREEN << "Darkest Secret: " << RESET;
 	std::getline(std::cin, aDarkestSecret);
 
-	if (this->ActualSize < 8) {
-		i = this->ActualSize;
-		this->ActualSize++;
+	if (this->_ActualSize < 8) {
+		i = this->_ActualSize;
+		this->_ActualSize++;
 	}
 	else {
-		if (this->CurrentSize > 7) {
-			this->CurrentSize = 0;
+		if (this->_CurrentSize > 7) {
+			this->_CurrentSize = 0;
 		}
-		i = this->CurrentSize;
-		this->CurrentSize++;
+		i = this->_CurrentSize;
+		this->_CurrentSize++;
 	}
 	
-	this->Contacts[i].setFirstName(aFirstName);
-	this->Contacts[i].setLastName(aLastName);
-	this->Contacts[i].setNickname(aNickname);
-	this->Contacts[i].setPhoneNumber(aPhoneNumber);
-	this->Contacts[i].setDarkestSecret(aDarkestSecret);
+	this->_Contacts[i].setFirstName(aFirstName);
+	this->_Contacts[i].setLastName(aLastName);
+	this->_Contacts[i].setNickname(aNickname);
+	this->_Contacts[i].setPhoneNumber(aPhoneNumber);
+	this->_Contacts[i].setDarkestSecret(aDarkestSecret);
 }
 
 int		main() {
 	std::string input;
 	PhoneBook	phonebook;
 
-	phonebook.ActualSize = 0;
-	phonebook.CurrentSize = 0;
+	phonebook.setActualSize(0);
+	phonebook.setCurrentSize(0);
 	std::cout << YELLOW << "ENTER A COMMAND: SEARCH - ADD - EXIT." << RESET << std::endl;
 	std::cout << "> ";
 	while (std::getline(std::cin, input)) {
