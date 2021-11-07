@@ -12,6 +12,16 @@
 
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat( const std::string Name, int Grade ): _Name(Name)
+{
+	if (Grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if (Grade > 150)
+		throw Bureaucrat::GradeTooLowException();
+	else
+		this->_Grade = Grade;
+}
+
 Bureaucrat::Bureaucrat(std::string const aName, int aGrade) : _Name(aName), _Grade(aGrade) {
 	std::cout << "Bureaucrat is born." << std::endl;
 }
