@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:01:45 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/08 11:53:54 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/08 13:00:54 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,10 @@ PresidentialPardonForm & PresidentialPardonForm::operator=(PresidentialPardonFor
 
 PresidentialPardonForm::~PresidentialPardonForm() {
 	std::cout << "PresidentialPardonForm Removed." << std::endl;	
+}
+
+void	PresidentialPardonForm::execute(Bureaucrat const & executor) const {
+	if (executor.getGrade() <= this->getGradeToExecute()) {
+		std::cout << this->_Target << " has been pardoned by Zafod Beeblebrox." << std::endl;
+	}
 }

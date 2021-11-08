@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 14:57:11 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/08 11:53:00 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/08 12:59:48 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class	PresidentialPardonForm : public Form {
 		PresidentialPardonForm(PresidentialPardonForm const & src) ;
 		PresidentialPardonForm & operator=(PresidentialPardonForm const & rhs);
 		~PresidentialPardonForm();
+
+		void	execute(Bureaucrat const & executor) const ;
 };
 
 #endif
