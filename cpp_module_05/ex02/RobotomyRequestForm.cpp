@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:01:02 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/08 13:11:47 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/08 15:50:30 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 	if (executor.getGrade() <= this->getGradeToExecute()) {
-		int	num = rand();
-		std::cout << num;
-/* 		if (num < 50)
+		srand(time(NULL));
+		int num = rand() % 2;
+		if (num)
 			std::cout << _Target << " has been robotomized successfully" << std::endl;
 		else
-			std::cout << _Target << " failed to robotomize" << std::endl;		 */
+			std::cout << _Target << " failed to robotomize" << std::endl;		
 	}
 }
