@@ -6,7 +6,7 @@
 #    By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 13:05:38 by asfaihi           #+#    #+#              #
-#    Updated: 2021/11/08 11:57:14 by asfaihi          ###   ########.fr        #
+#    Updated: 2021/11/08 12:57:59 by asfaihi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ $(NAME): $(OBJECT)
 
 clean:
 	/bin/rm -f $(OBJECT)
+	/bin/rm -f *_shrubbery
 
 fclean: clean
 	/bin/rm -f $(NAME)

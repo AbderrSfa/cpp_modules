@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 12:08:50 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/08 12:10:34 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/08 12:51:22 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class	Form {
 		int 				getGradeToExecute( void ) const ;
 
 		void	beSigned(Bureaucrat const & signer);
-		void	execute(Bureaucrat const & executor) const ;
+		virtual void	execute(Bureaucrat const & executor) const = 0;
 
 		class	GradeTooHighException : public std::exception {
 			const char * what() const throw();

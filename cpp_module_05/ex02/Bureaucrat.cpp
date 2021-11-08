@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:59:13 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/08 12:20:39 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/08 12:46:34 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,10 @@ void	Bureaucrat::signForm(Form & form) const {
 }
 
 void	Bureaucrat::executeForm(Form const & form) const {
-	if (!form.getIsSigned())
-		std::cout << form.getName() << "is not signed yet.";
+	if (!form.getIsSigned()) {
+		std::cout << form.getName() << "is not signed yet." << std::endl;
+		return ;
+	}
 	if (this->_Grade <= form.getGradeToExecute()) {
 		form.execute(*this);
 		std::cout << this->_Name << " executes " << form.getName() << std::endl;
