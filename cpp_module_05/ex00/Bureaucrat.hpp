@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:56:31 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/06 12:06:19 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/08 10:09:28 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
-# include <exception>
 
 class	Bureaucrat {
 	private:
@@ -33,19 +32,13 @@ class	Bureaucrat {
 		void		IncrementGrade( void );
 		void		DecrementGrade( void );
 
-		class GradeTooLowException: public std::exception
-		{
-			virtual const char* what() const throw();
+		class	GradeTooHighException : public std::exception {
+			const char * what() const throw();
 		};
-		class GradeTooHighException: public std::exception
-		{
-			virtual const char* what() const throw();
-		};
-};
 
-class	GradeTooHighException : public std::exception {
-	public:
-		
+		class	GradeTooLowException : public std::exception {
+			const char * what() const throw();
+		};
 };
 
 std::ostream &	operator<<(std::ostream & o, Bureaucrat const & rhs);

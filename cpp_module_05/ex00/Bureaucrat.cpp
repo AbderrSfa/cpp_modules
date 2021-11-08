@@ -6,23 +6,17 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:59:13 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/06 11:14:29 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/08 10:16:42 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat( const std::string Name, int Grade ): _Name(Name)
-{
-	if (Grade < 1)
-		throw Bureaucrat::GradeTooHighException();
-	else if (Grade > 150)
-		throw Bureaucrat::GradeTooLowException();
-	else
-		this->_Grade = Grade;
-}
-
 Bureaucrat::Bureaucrat(std::string const aName, int aGrade) : _Name(aName), _Grade(aGrade) {
+	if (aGrade < 1)
+		throw GradeTooHighException();
+	else if (aGrade > 150)
+		throw GradeTooLowException();
 	std::cout << "Bureaucrat is born." << std::endl;
 }
 
@@ -45,9 +39,25 @@ std::string const Bureaucrat::getName( void ) const { return (this->_Name); }
 
 int		Bureaucrat::getGrade( void ) const { return (this->_Grade); }
 
-void	Bureaucrat::IncrementGrade( void ) { this->_Grade--; }
+void	Bureaucrat::IncrementGrade( void ) {
+	if (this->_Grade == 1)
+		throw GradeTooHighException();
+	this->_Grade--;
+}
 
-void	Bureaucrat::DecrementGrade( void ) { this->_Grade++; }
+void	Bureaucrat::DecrementGrade( void ) {
+	if (this->_Grade == 150)
+		throw GradeTooHighException();
+	this->_Grade++;
+}
+
+const char * Bureaucrat::GradeTooHighException::what() const throw() {
+	return ("Bureaucrat: Grade Too High.");
+}
+
+const char * Bureaucrat::GradeTooLowException::what() const throw() {
+	return ("Bureaucrat: Grade Too Low.");
+}
 
 std::ostream &	operator<<(std::ostream & o, Bureaucrat const & rhs) {
 	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << ".";

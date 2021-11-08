@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:55:26 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/06 11:59:39 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/08 10:22:45 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		main() {
 	try {
-		Bureaucrat	yoink("Gagooch", 15);
+		Bureaucrat	yoink("Gagooch", 180);
 		std::cout << yoink << std::endl;
-		yoink.IncrementGrade();
+		yoink.DecrementGrade();
 		std::cout << yoink << std::endl;
 	}
 	catch(std::exception& e) {
