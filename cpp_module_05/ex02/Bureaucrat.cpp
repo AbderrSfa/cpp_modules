@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:59:13 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/08 11:08:24 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/08 12:20:39 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,24 @@ void	Bureaucrat::DecrementGrade( void ) {
 	this->_Grade++;
 }
 
-void	Bureaucrat::signForm(Form & form) {
+void	Bureaucrat::signForm(Form & form) const {
 	if (this->_Grade <= form.getGradeToSign()) {
 		form.beSigned(*this);
 		std::cout << this->_Name << " signs " << form.getName() << std::endl;
 	}
 	else
 		std::cout << this->_Name << " cannot sign " << form.getName() << " because they have a low grade." << std::endl;
+}
+
+void	Bureaucrat::executeForm(Form const & form) const {
+	if (!form.getIsSigned())
+		std::cout << form.getName() << "is not signed yet.";
+	if (this->_Grade <= form.getGradeToExecute()) {
+		form.execute(*this);
+		std::cout << this->_Name << " executes " << form.getName() << std::endl;
+	}
+	else
+		std::cout << this->_Name << " cannot execute " << form.getName() << " because they have a low grade." << std::endl;
 
 }
 

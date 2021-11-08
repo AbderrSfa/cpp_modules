@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 12:08:55 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/08 11:03:59 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/08 12:07:58 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,12 @@ int					Form::getGradeToSign( void ) const { return (this->_GradeToSign); }
 
 int					Form::getGradeToExecute( void ) const { return (this->_GradeToExecute); }
 
-void	Form::beSigned(Bureaucrat const & brc) {
-	if (brc.getGrade() <= this->_GradeToSign)
+void	Form::beSigned(Bureaucrat const & signer) {
+	if (signer.getGrade() <= this->_GradeToSign)
 		this->_IsSigned = 1;
 }
+
+
 
 const char * Form::GradeTooHighException::what() const throw() {
 	return ("Form: Grade Too High");
