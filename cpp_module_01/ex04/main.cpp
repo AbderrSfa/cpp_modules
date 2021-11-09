@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 13:05:35 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/10/26 12:16:14 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/09 10:21:48 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,24 @@ int     main( int argc, char **argv ) {
 		filename = argv[1];
 
 		std::ifstream   ifs(argv[1]);
+		if (!ifs.is_open()) {
+			std::cout << YELLOW << "File error." << std::endl;
+			return (1);
+		}
 		std::ofstream   ofs(filename.append(".replace"));
-		std::string     blop;
+		std::string     line;
 		int				pos = 0;
 	
-		while ( std::getline(ifs, blop) ) {
+		while ( std::getline(ifs, line) ) {
 			pos = 0;
 			while (pos != -1) {
-				pos = blop.find( argv[2], pos );
+				pos = line.find( argv[2], pos );
 				if (pos != -1) {
-					blop.erase( pos, strlen(argv[2]) );
-					blop.insert( pos, argv[3] );
+					line.erase( pos, strlen(argv[2]) );
+					line.insert( pos, argv[3] );
 				}
 			}
-			ofs << blop << std::endl;
+			ofs << line << std::endl;
 		}
 	}
 	else
