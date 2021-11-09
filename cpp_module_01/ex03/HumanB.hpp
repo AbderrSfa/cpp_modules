@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 13:05:55 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/10/25 13:05:56 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/09 10:04:14 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,13 @@ class	HumanB {
 	
 	public:
 		HumanB(std::string aName);
-		~HumanB() {}
-		
+		~HumanB();
+
+		std::string	getName( void ) const ;
+		void		setName(std::string aName);
+
 		void	attack( void ) const;
-		void	setWeapon(Weapon aWeapon);
+		void	setWeapon(Weapon &aWeapon);
 };
 
 #endif
