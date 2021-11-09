@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 13:05:35 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/09 10:21:48 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/09 11:22:19 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int     main( int argc, char **argv ) {
 			}
 			ofs << line << std::endl;
 		}
+		ifs.close();
+		ofs.close();
 	}
 	else
 		std::cout << YELLOW << "Invalid arguments." << std::endl;

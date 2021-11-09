@@ -12,9 +12,8 @@
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string aName) : _Name(aName) {
+HumanB::HumanB(std::string aName) : _Name(aName), _Weapon(NULL) {
 	std::cout << "HumanB constructor." << std::endl;	
-	this->_Weapon = NULL;
 }
 
 HumanB::~HumanB() {
@@ -26,7 +25,8 @@ std::string	HumanB::getName( void ) const { return (this->_Name); }
 void		HumanB::setName(std::string aName) { this->_Name = aName; }
 
 void	HumanB::attack( void ) const {
-	std::cout << this->_Name << " attacks with his " << this->_Weapon->getType() << std::endl;
+	if (_Weapon != NULL)
+		std::cout << this->_Name << " attacks with his " << this->_Weapon->getType() << std::endl;
 }
 
 void	HumanB::setWeapon(Weapon &aWeapon) {
