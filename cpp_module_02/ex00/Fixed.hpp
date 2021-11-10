@@ -18,19 +18,17 @@
 class   Fixed {
 	private:
 		int					_FixedPointVal;
-		static const int	_FractionalBits;
+		static const int	_Bits = 0;
 		
 	public:
 		Fixed( void );
 		Fixed( Fixed const & src );
-		~Fixed( void );
+		~Fixed();
 
 		Fixed &	operator=( Fixed const & rhs );
 
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
-		
-		
 };
 
 #endif

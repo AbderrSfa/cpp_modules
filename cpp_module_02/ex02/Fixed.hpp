@@ -19,14 +19,14 @@
 class   Fixed {
 	private:
 		int					_FixedPointVal;
-		static const int	_FractionalBits = 8;
+		static const int	_Bits = 8;
 		
 	public:
 		Fixed( void );
 		Fixed( Fixed const & src );
 		Fixed( int const aInt );
 		Fixed( float const aFloat );
-		~Fixed( void );
+		~Fixed();
 
 		Fixed &	operator=( Fixed const & rhs );
 
