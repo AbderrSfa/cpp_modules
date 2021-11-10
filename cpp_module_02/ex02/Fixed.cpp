@@ -68,14 +68,12 @@ Fixed	Fixed::operator+( Fixed const & rhs ) const {
 	Fixed temp;
 
 	temp = this->toFloat() + rhs.toFloat();
-	//temp.setRawBits(this->_FixedPointVal + rhs.getRawBits());
 	return (temp);}
 
 Fixed	Fixed::operator-( Fixed const & rhs ) const {
 	Fixed temp;
 
 	temp = this->toFloat() - rhs.toFloat();
-	//temp.setRawBits(this->_FixedPointVal - rhs.getRawBits());
 	return (temp);
 }
 
@@ -83,7 +81,6 @@ Fixed	Fixed::operator*( Fixed const & rhs ) const {
 	Fixed temp;
 
 	temp = this->toFloat() * rhs.toFloat();
-	//temp.setRawBits((this->_FixedPointVal + rhs.getRawBits()) >> this->_Bits);
 	return (temp);
 }
 
@@ -91,7 +88,6 @@ Fixed	Fixed::operator/( Fixed const & rhs ) const {
 	Fixed temp;
 
 	temp = this->toFloat() / rhs.toFloat();
-	//temp.setRawBits((this->_FixedPointVal << this->_Bits) / rhs.getRawBits());
 	return (temp);
 }
 
