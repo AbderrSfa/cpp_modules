@@ -29,7 +29,6 @@ Fixed::Fixed( int const aInt ) {
 Fixed::Fixed( float const aFloat ) {
 	std::cout << "Float constructor called" << std::endl;
 	this->_FixedPointVal = (int)(roundf(aFloat * (1 << this->_Bits)));
-	
 }
 
 Fixed::~Fixed( void ) {
