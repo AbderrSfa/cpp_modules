@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 10:11:02 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/02 15:35:47 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/11 17:50:03 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,15 @@ FragTrap::FragTrap(FragTrap const & src) : ClapTrap("default") {
 	*this = src;
 }
 
-/* FragTrap &  FragTrap::operator=(FragTrap const & rhs) {
-	*this = rhs;
+FragTrap &  FragTrap::operator=(FragTrap const & rhs) {
+	if (this == &rhs)
+		return *this;
+	this->setName(rhs.getName());
+	this->setAttackDamage(rhs.getAttackDamage());
+	this->setHitpoints(rhs.getHitPoints());
+	this->setEnergyPoints(rhs.getEnergyPoints());
 	return *this;
-} */
+}
 
 FragTrap::~FragTrap() {
 	std::cout << "FragTrap " << this->getName() << " died." << std::endl;    
