@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 14:39:04 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/11 11:15:43 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/11 11:45:14 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,10 +91,9 @@ Fixed	Fixed::operator/( Fixed const & rhs ) const {
 	return (temp);
 }
 
-// Incrementers and decrementers
+// Pre Incrementers and decrementers
 Fixed &	Fixed::operator++( void ) {
 	this->_FixedPointVal++;
-	return (*this);
 }
 
 Fixed &	Fixed::operator--( void ) {
@@ -102,6 +101,7 @@ Fixed &	Fixed::operator--( void ) {
 	return (*this);
 }
 
+// Post Incrementers and decrementers
 Fixed	Fixed::operator++( int ) {
 	Fixed	temp(*this);
 	this->operator++();
