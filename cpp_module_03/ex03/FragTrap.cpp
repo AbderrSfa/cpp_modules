@@ -6,21 +6,29 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 10:11:02 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/11 17:50:03 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/12 10:06:11 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string aName) : ClapTrap(aName) {
-	std::cout << "FragTrap " << this->getName() << " spawned." << std::endl;
+FragTrap::FragTrap( void ) {
 	this->setHitpoints(100);
 	this->setEnergyPoints(100);
 	this->setAttackDamage(30);
+	std::cout << "FragTrap default constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const & src) : ClapTrap("default") {
-	std::cout << "Copy constructor called" << std::endl;
+FragTrap::FragTrap(std::string aName) {
+	this->setName(aName);
+	this->setHitpoints(100);
+	this->setEnergyPoints(100);
+	this->setAttackDamage(30);
+	std::cout << "FragTrap parameterized constructor called" << std::endl;
+}
+
+FragTrap::FragTrap(FragTrap const & src) {
+	std::cout << "FragTrap Copy constructor called" << std::endl;
 	*this = src;
 }
 
@@ -35,7 +43,7 @@ FragTrap &  FragTrap::operator=(FragTrap const & rhs) {
 }
 
 FragTrap::~FragTrap() {
-	std::cout << "FragTrap " << this->getName() << " died." << std::endl;    
+	std::cout << "FragTrap destructor called" << std::endl;
 }
 
 void	FragTrap::highFivesGuys( void ) const {
