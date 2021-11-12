@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:16:59 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/11 17:48:55 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/12 10:20:29 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <iostream>
 
 class   ClapTrap {
-	private:
+	protected:
 		std::string _Name;
-		int         _Hitpoints;
+		int         _HitPoints;
 		int         _EnergyPoints;
 		int         _AttackDamage;
 	
