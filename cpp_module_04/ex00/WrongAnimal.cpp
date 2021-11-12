@@ -22,6 +22,8 @@ WrongAnimal::WrongAnimal(WrongAnimal const & src) {
 }
 
 WrongAnimal &  WrongAnimal::operator=(WrongAnimal const & rhs) {
+	if (this == &rhs)
+		return *this;
 	this->type = rhs.type;
 	return *this;
 }
