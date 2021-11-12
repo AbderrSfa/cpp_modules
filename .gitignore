@@ -1,6 +1,6 @@
-hello.cpp
 .vscode
 *.dSYM
+.DS_Store
 
 # Prerequisites
 *.d
@@ -34,4 +34,4 @@ hello.cpp
 *.exe
 *.out
 *.app
-PhoneBook
+
