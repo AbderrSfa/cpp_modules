@@ -6,16 +6,17 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 10:55:34 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/12 10:09:16 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/12 10:10:59 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap( void ) {
-	this->setHitpoints(100);
+/* 	this->setHitpoints(100);
 	this->setEnergyPoints(50);
-	this->setAttackDamage(30);
+	this->setAttackDamage(30); */
+	this->_Hitpoints = FragTrap::_Hitpoints;
 	std::cout << "DiamondTrap default constructor called" << std::endl;
 }
 
