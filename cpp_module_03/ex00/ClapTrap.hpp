@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:16:59 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/11 17:18:47 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/12 14:26:56 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class   ClapTrap {
 	private:
 		std::string _Name;
-		int         _Hitpoints;
+		int         _HitPoints;
 		int         _EnergyPoints;
 		int         _AttackDamage;
 	
@@ -28,16 +28,6 @@ class   ClapTrap {
 		ClapTrap(ClapTrap const & src);
 		ClapTrap &  operator=(ClapTrap const & rhs);
 		~ClapTrap();
-
-		void		setName(std::string aName);
-		void		setHitpoints(int aHitPoints);
-		void		setEnergyPoints(int aEnergyPoints);
-		void		setAttackDamage(int aAttackDamage);
-
-		std::string	getName( void ) const ;
-		int			getHitPoints( void ) const ;
-		int			getEnergyPoints( void ) const ;
-		int			getAttackDamage( void ) const ;
 
 		void		attack(std::string const & target) const ;
 		void		takeDamage(unsigned int amount) const ;
