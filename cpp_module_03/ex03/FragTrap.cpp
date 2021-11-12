@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 10:11:02 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/12 14:46:14 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/12 15:05:51 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,5 @@ void	FragTrap::attack(std::string const & target) const {
 }
 
 void	FragTrap::highFivesGuys( void ) const {
-	std::cout << "FragTrap " << this->_Name << " wants a highfive from the bois." << std::endl;
+	std::cout << "FragTrap wants a highfive from the bois." << std::endl;
 }
