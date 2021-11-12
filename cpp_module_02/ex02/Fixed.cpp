@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 14:39:04 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/11 11:45:14 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/12 12:23:52 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ Fixed	Fixed::operator/( Fixed const & rhs ) const {
 // Pre Incrementers and decrementers
 Fixed &	Fixed::operator++( void ) {
 	this->_FixedPointVal++;
+	return (*this);
 }
 
 Fixed &	Fixed::operator--( void ) {
