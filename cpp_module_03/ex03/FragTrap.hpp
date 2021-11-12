@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 10:10:59 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/12 11:37:46 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/12 14:54:03 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class   FragTrap : virtual public ClapTrap {
 		FragTrap &  operator=(FragTrap const & rhs);
 		~FragTrap();
 
+		void	attack(std::string const & target) const ;
 		void	highFivesGuys( void ) const ;
 };
 

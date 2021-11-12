@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 12:43:47 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/12 14:17:37 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/12 15:04:21 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,10 @@ ScavTrap::~ScavTrap() {
 	std::cout << "ScavTrap destructor called" << std::endl;
 }
 
+void	ScavTrap::attack(std::string const & target) const {
+	std::cout << "ScavTrap " << this->_Name << " performs attack on " << target << ", dealing " << this->_AttackDamage << " damage points!" << std::endl;
+}
+
 void	ScavTrap::guardGate( void ) const {
-	std::cout << "ScavTrap " << this->_Name << " is in gate keeper mode." << std::endl;    
+	std::cout << "ScavTrap entered gate keeper mode." << std::endl;    
 }
