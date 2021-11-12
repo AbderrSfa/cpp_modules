@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:16:57 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/02 10:52:49 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/12 14:25:03 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int     main() {
     FragTrap    Aya("\e[1;32mAya\e[0m");
 
     Adam.attack("Babooch");
-    Babooch.takeDamage(Adam.getAttackDamage());
-    Babooch.beRepaired(Babooch.getEnergyPoints());
+    Babooch.takeDamage(5);
+    Aya.beRepaired(10);
     Adam.guardGate();
     Aya.highFivesGuys();
 }

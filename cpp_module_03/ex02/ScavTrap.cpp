@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 12:43:47 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/12 10:21:06 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/12 14:24:08 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,5 @@ ScavTrap::~ScavTrap() {
 }
 
 void	ScavTrap::guardGate( void ) const {
-	std::cout << "ScavTrap " << this->getName() << " is in gate keeper mode." << std::endl;    
+	std::cout << "ScavTrap " << this->_Name << " is in gate keeper mode." << std::endl;    
 }

@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:17:01 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/12 10:19:53 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/12 14:23:37 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,27 +40,15 @@ ClapTrap::~ClapTrap() {
 	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
-///	Setters
-void	ClapTrap::setName(std::string aName) { this->_Name = aName; }
-void	ClapTrap::setHitpoints(int aHitPoints) { this->_HitPoints = aHitPoints; }
-void	ClapTrap::setEnergyPoints(int aEnergyPoints) { this->_EnergyPoints = aEnergyPoints; }
-void	ClapTrap::setAttackDamage(int aAttackDamage) { this->_AttackDamage = aAttackDamage; }
-
-/// Getters
-std::string	ClapTrap::getName( void ) const { return (this->_Name); }
-int		ClapTrap::getAttackDamage( void ) const { return (this->_AttackDamage); }
-int		ClapTrap::getEnergyPoints( void ) const { return (this->_EnergyPoints); }
-int		ClapTrap::getHitPoints( void ) const { return (this->_HitPoints); }
-
 /// Member functions
 void    ClapTrap::attack(std::string const & target) const {
-	std::cout << "ClapTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << this->_Name << " attacks " << target << ", causing " << this->_AttackDamage << " points of damage!" << std::endl;
 }
 
 void    ClapTrap::takeDamage(unsigned int amount) const {
-	std::cout << "ClapTrap " << this->getName() << " took " << amount << " points of damage." << std::endl;
+	std::cout << "ClapTrap " << this->_Name << " took " << amount << " points of damage." << std::endl;
 }
 
 void    ClapTrap::beRepaired(unsigned int amount) const {
-	std::cout << "ClapTrap " << this->getName() << " repaired life points by " << amount << "." << std::endl;
+	std::cout << "ClapTrap " << this->_Name << " repaired life points by " << amount << "." << std::endl;
 }
