@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 10:11:02 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/12 14:24:15 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/12 14:46:14 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,10 @@ FragTrap &  FragTrap::operator=(FragTrap const & rhs) {
 
 FragTrap::~FragTrap() {
 	std::cout << "FragTrap destructor called" << std::endl;
+}
+
+void	FragTrap::attack(std::string const & target) const {
+	std::cout << "FragTrap " << this->_Name << " executes Frag attack on " << target << ", worth " << this->_AttackDamage << " damage points!" << std::endl;
 }
 
 void	FragTrap::highFivesGuys( void ) const {

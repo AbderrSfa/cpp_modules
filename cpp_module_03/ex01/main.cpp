@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:16:57 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/12 14:39:53 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/12 14:47:10 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ int     main() {
     Wizard.attack("Warrior");
     Warrior.takeDamage(10);
     Warrior.beRepaired(5);
+    Wizard.guardGate();
 }
