@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 10:55:34 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/12 14:59:48 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/13 22:26:49 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,10 @@ DiamondTrap &  DiamondTrap::operator=(DiamondTrap const & rhs) {
 
 DiamondTrap::~DiamondTrap() {
 	std::cout << "DiamondTrap destructor called." << std::endl;    
+}
+
+void	DiamondTrap::attack(std::string const & target) const {
+	ScavTrap::attack(target);
 }
 
 void	DiamondTrap::whoAmI( void ) const {
