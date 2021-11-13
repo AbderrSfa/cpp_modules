@@ -14,8 +14,8 @@
 
 Cat::Cat( void ) : Animal() {
 	this->type = "Cat";
-	std::cout << "Cat is born." << std::endl;
 	this->_brain = new Brain();
+	std::cout << "Cat is born." << std::endl;
 }
 
 Cat::Cat(Cat const & src) {
@@ -25,9 +25,11 @@ Cat::Cat(Cat const & src) {
 
 Cat &  Cat::operator=(Cat const & rhs) {
 	if (this == &rhs)
-		return *this;
+		return (*this);
 	this->type = rhs.type;
-	return *this;
+	this->_brain = new Brain();
+	*this->_brain = *rhs._brain;
+	return (*this);
 }
 
 Cat::~Cat() {

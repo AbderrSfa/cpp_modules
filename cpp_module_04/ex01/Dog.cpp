@@ -14,8 +14,8 @@
 
 Dog::Dog( void ) : Animal() {
 	this->type = "Dog";
-	std::cout << "Dog is born." << std::endl;
 	this->_brain = new Brain();
+	std::cout << "Dog is born." << std::endl;
 }
 
 Dog::Dog(Dog const & src) {
@@ -25,9 +25,11 @@ Dog::Dog(Dog const & src) {
 
 Dog &  Dog::operator=(Dog const & rhs) {
 	if (this == &rhs)
-		return *this;
+		return (*this);
 	this->type = rhs.type;
-	return *this;
+	this->_brain = new Brain();
+	*this->_brain = *rhs._brain;
+	return (*this);
 }
 
 Dog::~Dog() {

@@ -12,9 +12,9 @@
 
 NAME = a.out
 
-SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 
-HEADERS = Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp
+HEADERS = Animal.hpp Cat.hpp Dog.hpp Brain.hpp
 
 OBJECT = $(SRC:%.cpp=%.o)
 

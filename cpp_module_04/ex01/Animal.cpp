@@ -23,9 +23,9 @@ Animal::Animal(Animal const & src) {
 
 Animal &  Animal::operator=(Animal const & rhs) {
 	if (this == &rhs)
-		return *this;
+		return (*this);
 	this->type = rhs.type;
-	return *this;
+	return (*this);
 }
 
 Animal::~Animal() {

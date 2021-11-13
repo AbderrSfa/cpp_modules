@@ -13,12 +13,10 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 #include "Brain.hpp"
 
 int     main() {
-	int		array_size = 2;
+	int		array_size = 4;
 	Animal	*animals[array_size];
 	int		i = 0;
 
