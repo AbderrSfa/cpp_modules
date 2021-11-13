@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:16:57 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/13 22:27:06 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/13 22:40:39 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 #include "DiamondTrap.hpp"
 
 int     main() {
-	DiamondTrap	lmao("haha");
+	DiamondTrap	Monster("haha");
 
-	lmao.attack("yo mama");
-	lmao.guardGate();
-	lmao.highFivesGuys();	
-	lmao.whoAmI();
+	Monster.attack("Villager");
+	Monster.guardGate();
+	Monster.highFivesGuys();	
+	Monster.whoAmI();
 }
