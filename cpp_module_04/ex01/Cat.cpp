@@ -13,7 +13,7 @@
 #include "Cat.hpp"
 
 Cat::Cat( void ) : Animal() {
-    this->setType("Cat");
+	this->type = "Cat";
 	std::cout << "Cat is born." << std::endl;
 	this->_brain = new Brain();
 }
@@ -24,6 +24,8 @@ Cat::Cat(Cat const & src) {
 }
 
 Cat &  Cat::operator=(Cat const & rhs) {
+	if (this == &rhs)
+		return *this;
 	this->type = rhs.type;
 	return *this;
 }

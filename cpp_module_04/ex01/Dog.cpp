@@ -13,7 +13,7 @@
 #include "Dog.hpp"
 
 Dog::Dog( void ) : Animal() {
-    this->setType("Dog");
+	this->type = "Dog";
 	std::cout << "Dog is born." << std::endl;
 	this->_brain = new Brain();
 }
@@ -24,6 +24,8 @@ Dog::Dog(Dog const & src) {
 }
 
 Dog &  Dog::operator=(Dog const & rhs) {
+	if (this == &rhs)
+		return *this;
 	this->type = rhs.type;
 	return *this;
 }
