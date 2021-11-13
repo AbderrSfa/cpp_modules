@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:13:11 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/04 10:18:28 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/13 21:16:31 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ Animal::Animal(Animal const & src) {
 }
 
 Animal &  Animal::operator=(Animal const & rhs) {
+	if (this == &rhs)
+		return (*this);
 	this->type = rhs.type;
-	return *this;
+	return (*this);
 }
 
 Animal::~Animal() {

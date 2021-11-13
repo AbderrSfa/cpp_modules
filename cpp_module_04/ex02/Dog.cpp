@@ -6,16 +6,16 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:33:30 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/04 11:51:56 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/13 21:18:22 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 Dog::Dog( void ) : Animal() {
-    this->setType("Dog");
-	std::cout << "Dog is born." << std::endl;
+	this->type = "Dog";
 	this->_brain = new Brain();
+	std::cout << "Dog is born." << std::endl;
 }
 
 Dog::Dog(Dog const & src) {
@@ -24,8 +24,12 @@ Dog::Dog(Dog const & src) {
 }
 
 Dog &  Dog::operator=(Dog const & rhs) {
+	if (this == &rhs)
+		return (*this);
 	this->type = rhs.type;
-	return *this;
+	this->_brain = new Brain();
+	*this->_brain = *rhs._brain;
+	return (*this);
 }
 
 Dog::~Dog() {

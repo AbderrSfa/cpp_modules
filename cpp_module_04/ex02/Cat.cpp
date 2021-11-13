@@ -6,16 +6,16 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:06:11 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/04 11:46:04 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/13 21:17:52 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
 Cat::Cat( void ) : Animal() {
-    this->setType("Cat");
-	std::cout << "Cat is born." << std::endl;
+	this->type = "Cat";
 	this->_brain = new Brain();
+	std::cout << "Cat is born." << std::endl;
 }
 
 Cat::Cat(Cat const & src) {
@@ -24,8 +24,12 @@ Cat::Cat(Cat const & src) {
 }
 
 Cat &  Cat::operator=(Cat const & rhs) {
+	if (this == &rhs)
+		return (*this);
 	this->type = rhs.type;
-	return *this;
+	this->_brain = new Brain();
+	*this->_brain = *rhs._brain;
+	return (*this);
 }
 
 Cat::~Cat() {
