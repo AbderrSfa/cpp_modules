@@ -20,6 +20,7 @@ Dog::Dog( void ) : Animal() {
 
 Dog::Dog(Dog const & src) {
 	std::cout << "Dog is born (copy constructor)" << std::endl;
+	this->_brain = NULL;
 	*this = src;
 }
 
@@ -27,7 +28,8 @@ Dog &  Dog::operator=(Dog const & rhs) {
 	if (this == &rhs)
 		return (*this);
 	this->type = rhs.type;
-	this->_brain = new Brain();
+	if (this->_brain == NULL)
+		this->_brain = new Brain();
 	*this->_brain = *rhs._brain;
 	return (*this);
 }

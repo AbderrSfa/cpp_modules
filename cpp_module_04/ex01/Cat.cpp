@@ -20,6 +20,7 @@ Cat::Cat( void ) : Animal() {
 
 Cat::Cat(Cat const & src) {
 	std::cout << "Cat is born (copy constructor)" << std::endl;
+	this->_brain = NULL;
 	*this = src;
 }
 
@@ -27,7 +28,8 @@ Cat &  Cat::operator=(Cat const & rhs) {
 	if (this == &rhs)
 		return (*this);
 	this->type = rhs.type;
-	this->_brain = new Brain();
+	if (this->_brain == NULL)
+		this->_brain = new Brain();
 	*this->_brain = *rhs._brain;
 	return (*this);
 }

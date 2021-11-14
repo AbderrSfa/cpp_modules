@@ -16,7 +16,7 @@
 #include "Brain.hpp"
 
 int     main() {
-	int		array_size = 4;
+/* 	int		array_size = 4;
 	Animal	*animals[array_size];
 	int		i = 0;
 
@@ -37,8 +37,12 @@ int     main() {
 	i = 0;
 	while (i < array_size) {
 		delete animals[i++];
-	}
+	} */
 
+	Cat one;
+	Cat two;
+
+	two = one;
 /* 	const Animal*	meta = new Animal();
  */
 }
