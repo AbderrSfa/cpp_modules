@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:37:19 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/13 21:23:03 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/14 05:36:40 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,6 @@ int     main() {
 		delete animals[i++];
 	}
 
-/* 	Dog basic;
-	{
-		Dog tmp = basic;
-	} */
-	
 /* 	const Animal*	meta = new Animal();
  */
 }

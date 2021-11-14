@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:33:33 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/04 10:48:15 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/14 05:33:51 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class   Dog : public Animal {
 		Dog &	operator=(Dog const & rhs);
 		~Dog();
 
-		void		makeSound( void ) const ;
+		void		makeSound( void ) const;
 };
 
 #endif
