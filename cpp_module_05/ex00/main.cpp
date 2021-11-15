@@ -13,19 +13,48 @@
 #include "Bureaucrat.hpp"
 
 int		main() {
-	try {
-		Bureaucrat	bookie("Mike", 100);
-		std::cout << bookie << std::endl;
-		bookie.DecrementGrade();
-		std::cout << bookie << std::endl;
+	try
+	{
+		Bureaucrat Bob("Bob", 2);
+
+		std::cout << Bob << std::endl;
+		Bob.IncrementGrade();
+		std::cout << Bob << std::endl;
+		Bob.IncrementGrade();
 	}
-	catch(std::exception& e) {
+	catch(const std::exception& e)
+	{
 		std::cerr << e.what() << '\n';
 	}
+	// test the DecrementGrade()
+	try
+	{
+		Bureaucrat jack("jack", 149);
 
-/* 	Bureaucrat	dan("Dan", 55);
-	Bureaucrat	jim("Jim", 44);
-	jim = dan;
-
-	std::cout << jim << std::endl; */
+		std::cout << jack << std::endl;
+		jack.DecrementGrade();
+		std::cout << jack << std::endl;
+		jack.DecrementGrade();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	// test the Bureaucrat constractor
+	try
+	{
+		Bureaucrat error("error", 999);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	try
+	{
+		Bureaucrat error("error", 0);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }
