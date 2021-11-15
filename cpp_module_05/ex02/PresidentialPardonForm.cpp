@@ -6,14 +6,13 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:01:45 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/08 13:00:54 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/15 13:37:07 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(std::string aTarget) : Form("PresidentialPardonForm", 25, 5), _Target(aTarget) {
-	std::cout << "PresidentialPardonForm created." << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & src) : Form("PresidentialPardonForm", 25, 5), _Target(src._Target) {
@@ -28,7 +27,6 @@ PresidentialPardonForm & PresidentialPardonForm::operator=(PresidentialPardonFor
 }
 
 PresidentialPardonForm::~PresidentialPardonForm() {
-	std::cout << "PresidentialPardonForm Removed." << std::endl;	
 }
 
 void	PresidentialPardonForm::execute(Bureaucrat const & executor) const {

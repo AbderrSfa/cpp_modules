@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:55:26 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/15 12:09:12 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/15 13:35:51 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,10 @@ int		main() {
 	catch(std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}
+
+/* 	Bureaucrat	dan("Dan", 55);
+	Bureaucrat	jim("Jim", 44);
+	jim = dan;
+
+	std::cout << jim << std::endl; */
 }

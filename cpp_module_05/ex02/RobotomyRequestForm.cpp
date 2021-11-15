@@ -6,14 +6,13 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:01:02 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/08 15:50:30 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/15 13:37:15 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(std::string aTarget) : Form("RobotomyRequestForm", 72, 45), _Target(aTarget) {
-	std::cout << "RobotomyRequestForm created." << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & src) : Form("RobotomyRequestForm", 72, 45), _Target(src._Target) {
@@ -28,7 +27,6 @@ RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm const &
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {
-	std::cout << "RobotomyRequestForm Removed." << std::endl;	
 }
 
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const {

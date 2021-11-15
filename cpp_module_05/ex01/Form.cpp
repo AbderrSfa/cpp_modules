@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 12:08:55 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/08 11:03:59 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/15 13:36:43 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ Form::Form(std::string const aName, int const aToSign, int const aToExecute) :
 		throw GradeTooHighException();
 	if (this->_GradeToExecute > 150 || this->_GradeToSign > 150)
 		throw GradeTooLowException();
-	std::cout << "Form created." << std::endl;
 }
 
 Form::Form(Form const & src) :
@@ -34,7 +33,6 @@ Form & Form::operator=(Form const & rhs) {
 }
 
 Form::~Form() {
-	std::cout << "Form destroyed." << std::endl;
 }
 
 std::string const	Form::getName( void ) const { return (this->_Name); }

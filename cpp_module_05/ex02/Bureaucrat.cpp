@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:59:13 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/08 13:02:06 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/15 13:36:51 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ Bureaucrat::Bureaucrat(std::string const aName, int aGrade) : _Name(aName), _Gra
 		throw GradeTooHighException();
 	else if (aGrade > 150)
 		throw GradeTooLowException();
-	std::cout << "Bureaucrat is born." << std::endl;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const & src) : _Name(src._Name) {
@@ -33,7 +32,6 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs) {
 }
 
 Bureaucrat::~Bureaucrat() {
-	std::cout << "Bureaucrat died." << std::endl;
 }
 
 std::string const Bureaucrat::getName( void ) const { return (this->_Name); }

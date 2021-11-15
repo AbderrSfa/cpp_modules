@@ -6,18 +6,19 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:59:13 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/08 10:16:42 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/15 13:32:08 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+Bureaucrat::Bureaucrat( void ) {}
 
 Bureaucrat::Bureaucrat(std::string const aName, int aGrade) : _Name(aName), _Grade(aGrade) {
 	if (aGrade < 1)
 		throw GradeTooHighException();
 	else if (aGrade > 150)
 		throw GradeTooLowException();
-	std::cout << "Bureaucrat is born." << std::endl;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const & src) : _Name(src._Name) {
@@ -31,9 +32,7 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs) {
 	return (*this);
 }
 
-Bureaucrat::~Bureaucrat() {
-	std::cout << "Bureaucrat died." << std::endl;
-}
+Bureaucrat::~Bureaucrat() {}
 
 std::string const Bureaucrat::getName( void ) const { return (this->_Name); }
 
