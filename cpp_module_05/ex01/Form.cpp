@@ -47,14 +47,16 @@ int					Form::getGradeToExecute( void ) const { return (this->_GradeToExecute); 
 void	Form::beSigned(Bureaucrat const & brc) {
 	if (brc.getGrade() <= this->_GradeToSign)
 		this->_IsSigned = 1;
+	else
+		throw GradeTooHighException();
 }
 
 const char * Form::GradeTooHighException::what() const throw() {
-	return ("Form: Grade Too High");
+	return ("Exception: Form Grade Too High");
 }
 
 const char * Form::GradeTooLowException::what() const throw() {
-	return ("Form: Grade Low High");
+	return ("Exception: Form Grade Too Low");
 }
 
 std::ostream &	operator<<(std::ostream & o, Form const & rhs) {

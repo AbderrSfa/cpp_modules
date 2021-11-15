@@ -14,15 +14,45 @@
 #include "Form.hpp"
 
 int		main() {
-	try {
-		Bureaucrat	Jordan("Peterson", 40);
-		Form	C_16("C-16", 1, 1);
-		std::cout << Jordan << std::endl;
-		std::cout << C_16 << std::endl;
-		Jordan.signForm(C_16);
-		std::cout << C_16 << std::endl;
+	// test the test the form pram constructor
+	try
+	{
+		Form test("test", -10, 180);
+
+		std::cout << test.getName() << std::endl;
 	}
-	catch(const std::exception& e) {
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	// test the a working form declaration
+	try
+	{
+		Form		contract("Contract", 1, 5);
+		Bureaucrat	director("Director", 1);
+
+		std::cout << contract << std::endl;
+
+		director.signForm(contract);
+		contract.beSigned(director);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	// what will happend if you try to sign a form with a lower garde? let's see
+	try
+	{
+		Form		Project("Project Approval", 5, 10);
+		Bureaucrat	worker("worker", 77);
+
+		std::cout << Project << std::endl;
+
+		worker.signForm(Project);
+		Project.beSigned(worker);
+	}
+	catch(const std::exception& e)
+	{
 		std::cerr << e.what() << '\n';
 	}
 }
