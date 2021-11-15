@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:06:11 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/13 21:17:52 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/15 09:59:48 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Cat::Cat( void ) : Animal() {
 	this->type = "Cat";
 	this->_brain = new Brain();
-	std::cout << "meme is born." << std::endl;
+	std::cout << "Cat is born." << std::endl;
 }
 
 Cat::Cat(Cat const & src) {
