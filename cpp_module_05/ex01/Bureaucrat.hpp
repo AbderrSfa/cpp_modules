@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:56:31 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/08 11:03:41 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/15 13:39:07 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class	Bureaucrat {
 	private:
 		std::string const	_Name;
 		int					_Grade;
+		Bureaucrat( void );
 
 	public:
 		Bureaucrat(std::string const aName, int aGrade);

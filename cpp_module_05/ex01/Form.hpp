@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 12:08:50 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/08 11:03:54 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/15 13:40:27 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class	Form {
 		bool				_IsSigned;
 		int const			_GradeToSign;
 		int const			_GradeToExecute;
+		Form( void );
 
 	public:
 		Form(std::string const aName, int const aGradeToSign, int const aGradeToExecute);

@@ -6,11 +6,13 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 12:08:55 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/15 13:36:43 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/15 13:49:56 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+
+Form::Form( void ) : _GradeToSign(), _GradeToExecute() {}
 
 Form::Form(std::string const aName, int const aToSign, int const aToExecute) :
 	_Name(aName), _IsSigned(false), _GradeToSign(aToSign), _GradeToExecute(aToExecute) {
@@ -32,8 +34,7 @@ Form & Form::operator=(Form const & rhs) {
 	return (*this);
 }
 
-Form::~Form() {
-}
+Form::~Form() {}
 
 std::string const	Form::getName( void ) const { return (this->_Name); }
 
