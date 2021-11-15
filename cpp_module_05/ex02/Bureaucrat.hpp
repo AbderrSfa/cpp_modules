@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:56:31 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/15 13:41:55 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/15 14:25:27 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class	Bureaucrat {
 		Bureaucrat( void );
 
 	public:
-		Bureaucrat( void );
 		Bureaucrat(std::string const aName, int aGrade);
 		Bureaucrat(Bureaucrat const & src) ;
 		Bureaucrat & operator=(Bureaucrat const & rhs);
