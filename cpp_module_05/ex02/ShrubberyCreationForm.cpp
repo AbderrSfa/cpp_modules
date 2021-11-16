@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:01:24 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/15 13:49:03 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/16 10:35:47 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,23 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm c
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
+const char * ShrubberyCreationForm::GradeTooHighException::what() const throw() {
+	return ("Exception: ShrubberyCreationForm Grade Too High");
+}
+
+const char * ShrubberyCreationForm::FormNotSignedException::what() const throw() {
+	return ("Exception: ShrubberyCreationForm Not Yet Signed");
+}
+
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
+	if (!this->getIsSigned())
+		throw FormNotSignedException();
 	if (executor.getGrade() <= this->getGradeToExecute()) {
 		std::ofstream	ofs(this->_Target + "_shrubbery");
 		ofs << "       ###\n      #o###\n    #####o###\n   #o#\\#|#/###\n    ###\\|/#o#\n     # }|{  #\n       }|{\n\n" << std::endl;
 		ofs << "       ###\n      #o###\n    #####o###\n   #o#\\#|#/###\n    ###\\|/#o#\n     # }|{  #\n       }|{\n\n" << std::endl;
 		ofs << "       ###\n      #o###\n    #####o###\n   #o#\\#|#/###\n    ###\\|/#o#\n     # }|{  #\n       }|{\n" << std::endl;
 	}
+	else
+		throw ShrubberyCreationForm::GradeTooHighException();
 }

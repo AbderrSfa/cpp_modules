@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 14:59:40 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/15 13:46:58 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/16 10:33:58 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,14 @@ class	RobotomyRequestForm : public Form {
 		RobotomyRequestForm(RobotomyRequestForm const & src) ;
 		RobotomyRequestForm & operator=(RobotomyRequestForm const & rhs);
 		~RobotomyRequestForm();
+
+		class	GradeTooHighException : public std::exception {
+			const char * what() const throw();
+		};
+
+		class	FormNotSignedException : public std::exception {
+			const char * what() const throw();
+		};
 
 		void	execute(Bureaucrat const & executor) const ;
 };

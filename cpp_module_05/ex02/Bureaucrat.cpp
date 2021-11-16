@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:59:13 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/15 13:49:36 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/16 10:48:04 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,21 +57,16 @@ void	Bureaucrat::signForm(Form & form) const {
 		std::cout << this->_Name << " signs " << form.getName() << std::endl;
 	}
 	else
-		std::cout << this->_Name << " cannot sign " << form.getName() << " because they have a low grade." << std::endl;
+		std::cout << this->_Name << " cannot sign " << form.getName() << " because it requires a minimum grade of " << form.getGradeToSign() << "." << std::endl;
 }
 
 void	Bureaucrat::executeForm(Form const & form) const {
-	if (!form.getIsSigned()) {
-		std::cout << form.getName() << " is not signed yet." << std::endl;
-		return ;
-	}
 	if (this->_Grade <= form.getGradeToExecute()) {
 		form.execute(*this);
 		std::cout << this->_Name << " executes " << form.getName() << std::endl;
 	}
 	else
-		std::cout << this->_Name << " cannot execute " << form.getName() << " because they have a low grade." << std::endl;
-
+		throw GradeTooLowException();
 }
 
 const char * Bureaucrat::GradeTooHighException::what() const throw() {
