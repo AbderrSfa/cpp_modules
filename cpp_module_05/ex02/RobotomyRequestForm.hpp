@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 14:59:40 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/16 10:33:58 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/16 11:56:39 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class	RobotomyRequestForm : public Form {
 	private:
 		std::string _Target;
 		RobotomyRequestForm( void );
+		void	action( void ) const;
 
 	public:
 		RobotomyRequestForm(std::string aTarget);

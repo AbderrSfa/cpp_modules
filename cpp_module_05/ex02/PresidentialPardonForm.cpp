@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:01:45 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/16 10:32:24 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/16 11:57:35 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,15 @@ const char * PresidentialPardonForm::FormNotSignedException::what() const throw(
 	return ("Exception: PresidentialPardonForm Not Yet Signed");
 }
 
+void	PresidentialPardonForm::action( void ) const {
+	std::cout << this->_Target << " has been pardoned by Zafod Beeblebrox." << std::endl;
+}
+
 void	PresidentialPardonForm::execute(Bureaucrat const & executor) const {
 	if (!this->getIsSigned())
 		throw FormNotSignedException();
-	if (executor.getGrade() <= this->getGradeToExecute()) {
-		std::cout << this->_Target << " has been pardoned by Zafod Beeblebrox." << std::endl;
-	}
+	if (executor.getGrade() <= this->getGradeToExecute())
+		this->action();
 	else
 		throw PresidentialPardonForm::GradeTooHighException();
 }

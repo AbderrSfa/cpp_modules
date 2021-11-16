@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:00:22 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/16 10:35:11 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/16 11:56:33 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class	ShrubberyCreationForm : public Form {
 	private:
 		std::string	_Target;
 		ShrubberyCreationForm( void );
+		void	action( void ) const;
 
 	public:
 		ShrubberyCreationForm(std::string aTarget);

@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:01:02 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/16 10:34:49 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/16 11:54:36 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,20 @@ const char * RobotomyRequestForm::FormNotSignedException::what() const throw() {
 	return ("Exception: RobotomyRequestForm Not Yet Signed");
 }
 
+void	RobotomyRequestForm::action( void ) const {
+	srand(time(NULL));
+	int num = rand() % 2;
+	if (num)
+		std::cout << _Target << " has been robotomized successfully" << std::endl;
+	else
+		std::cout << _Target << " failed to robotomize" << std::endl;	
+}
+
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 	if (!this->getIsSigned())
 		throw FormNotSignedException();
-	if (executor.getGrade() <= this->getGradeToExecute()) {
-		srand(time(NULL));
-		int num = rand() % 2;
-		if (num)
-			std::cout << _Target << " has been robotomized successfully" << std::endl;
-		else
-			std::cout << _Target << " failed to robotomize" << std::endl;		
-	}
+	if (executor.getGrade() <= this->getGradeToExecute())
+		this->action();
 	else
 		throw RobotomyRequestForm::GradeTooHighException();
 }

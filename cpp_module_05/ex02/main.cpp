@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:55:26 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/16 11:10:10 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/16 11:58:03 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 int		main() {
 	try
 	{
-		ShrubberyCreationForm	test("happy");
-		Bureaucrat				worker("worker", 100);
+		ShrubberyCreationForm	test("test");
+		Bureaucrat				employee("employee", 100);
 
 		std::cout << test << std::endl;
-		worker.signForm(test);
+		employee.signForm(test);
 		std::cout << test << std::endl;
-		worker.executeForm(test);
+		employee.executeForm(test);
 	}
 	catch(const std::exception& e)
 	{
@@ -35,13 +35,13 @@ int		main() {
 
 	try
 	{
-		RobotomyRequestForm		test("happy");
-		Bureaucrat				worker("worker", 45);
+		RobotomyRequestForm		test("test");
+		Bureaucrat				employee("employee", 45);
 
 		std::cout << test << std::endl;
-		worker.signForm(test);
+		employee.signForm(test);
 		std::cout << test << std::endl;
-		worker.executeForm(test);
+		employee.executeForm(test);
 	}
 	catch(const std::exception& e)
 	{
@@ -53,13 +53,13 @@ int		main() {
 
 	try
 	{
-		PresidentialPardonForm	test("happy");
-		Bureaucrat				worker("worker", 5);
+		PresidentialPardonForm	test("test");
+		Bureaucrat				employee("employee", 5);
 
 		std::cout << test << std::endl;
-		worker.signForm(test);
+		employee.signForm(test);
 		std::cout << test << std::endl;
-		worker.executeForm(test);
+		employee.executeForm(test);
 	}
 	catch(const std::exception& e)
 	{
@@ -70,11 +70,11 @@ int		main() {
 
 	try
 	{
-		ShrubberyCreationForm	test("happy");
-		Bureaucrat				worker("worker", 100);
+		ShrubberyCreationForm	test("test");
+		Bureaucrat				employee("employee", 100);
 
 		std::cout << test << std::endl;
-		worker.executeForm(test);
+		employee.executeForm(test);
 	}
 	catch(const std::exception& e)
 	{

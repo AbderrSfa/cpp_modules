@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:55:26 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/15 14:13:42 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/16 11:34:10 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ int		main() {
 	{
 		std::cerr << e.what() << '\n';
 	}
-	// test the DecrementGrade()
+
+	std::cout << std::endl;
+
 	try
 	{
 		Bureaucrat jack("jack", 149);
@@ -40,15 +42,20 @@ int		main() {
 	{
 		std::cerr << e.what() << '\n';
 	}
-	// test the Bureaucrat constractor
+
+	std::cout << std::endl;
+
 	try
 	{
-		Bureaucrat error("error", 999);
+		Bureaucrat error("error", 200);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
+
+	std::cout << std::endl;
+
 	try
 	{
 		Bureaucrat error("error", 0);
