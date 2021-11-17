@@ -14,70 +14,21 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int		main() {
-	try
-	{
-		ShrubberyCreationForm	test("test");
-		Bureaucrat				employee("employee", 100);
+	try {
+		Bureaucrat	worker("worker", 40);
+		Intern someRandomIntern;
+		Form* rrf;
+		rrf = someRandomIntern.makeForm("ROBOTOMY request", "Bender");
 
-		std::cout << test << std::endl;
-		employee.signForm(test);
-		std::cout << test << std::endl;
-		employee.executeForm(test);
+		std::cout << *rrf << std::endl;
+
+		worker.signForm(*rrf);
+		worker.executeForm(*rrf);
 	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-
-	std::cout << std::endl;
-
-	try
-	{
-		RobotomyRequestForm		test("test");
-		Bureaucrat				employee("employee", 45);
-
-		std::cout << test << std::endl;
-		employee.signForm(test);
-		std::cout << test << std::endl;
-		employee.executeForm(test);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-
-	std::cout << std::endl;
-
-
-	try
-	{
-		PresidentialPardonForm	test("test");
-		Bureaucrat				employee("employee", 5);
-
-		std::cout << test << std::endl;
-		employee.signForm(test);
-		std::cout << test << std::endl;
-		employee.executeForm(test);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-
-	std::cout << std::endl;
-
-	try
-	{
-		ShrubberyCreationForm	test("test");
-		Bureaucrat				employee("employee", 100);
-
-		std::cout << test << std::endl;
-		employee.executeForm(test);
-	}
-	catch(const std::exception& e)
-	{
+	catch(const std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}
 }
