@@ -13,18 +13,18 @@ Intern & Intern::operator=(Intern const & rhs) {
 Intern::~Intern() {}
 
 const char* Intern::FormNotFound::what() const throw() {
-	return ("InterException: Form Not Found!");
+	return ("Intern Exception: Form Not Found!");
 }
 
-Form*	Intern::ShrubberyCreation( std::string aTarget ) {
+Form*	Intern::ShrubberyCreation(std::string aTarget) {
 	return (new ShrubberyCreationForm(aTarget));
 }
 
-Form* Intern::RobotomyRequest( std::string aTarget ) {
+Form*	Intern::RobotomyRequest(std::string aTarget) {
 	return (new RobotomyRequestForm(aTarget));
 }
 
-Form* Intern::PresidentialPardon( std::string aTarget ) {
+Form*	Intern::PresidentialPardon(std::string aTarget) {
 	return (new PresidentialPardonForm(aTarget));
 }
 
@@ -34,7 +34,7 @@ std::string	to_lowercase(std::string str) {
 		str[i] = tolower(str[i]);
 		i++;
 	}
-	return (str);aName
+	return (str);
 }
 
 Form*	Intern::makeForm( std::string aName, std::string aTarget )
@@ -48,10 +48,10 @@ Form*	Intern::makeForm( std::string aName, std::string aTarget )
 
 	std::string	Forms[] = { "shrubbery creation", "robotomy request", "presidential pardon" };
 
-	std::string	aNameLower = to_lowercase(aName);
+	aName = to_lowercase(aName);
 	int	i = 0;
 	while (i < 3) {
-		if (Forms[i] == aNameLower) {
+		if (Forms[i] == aName) {
 			std::cout << "Intern creates " << aName << "." << std::endl;
 			return ((this->*pointer[i])(aTarget));
 		}

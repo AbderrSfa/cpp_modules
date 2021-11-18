@@ -7,6 +7,11 @@
 
 class	Intern
 {
+	private:
+		Form*	ShrubberyCreation( std::string aTarget );
+		Form*	RobotomyRequest( std::string aTarget );
+		Form*	PresidentialPardon( std::string aTarget );
+
 	public:
 		Intern();
 		Intern(Intern const & src);
@@ -18,10 +23,6 @@ class	Intern
 		};
 
 		Form*	makeForm( std::string aName, std::string aTarget );
-
-		Form*	ShrubberyCreation( std::string aTarget );
-		Form*	RobotomyRequest( std::string aTarget );
-		Form*	PresidentialPardon( std::string aTarget );
 };
 
 #endif
