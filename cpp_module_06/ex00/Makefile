@@ -6,15 +6,15 @@
 #    By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 13:05:38 by asfaihi           #+#    #+#              #
-#    Updated: 2021/11/09 15:45:26 by asfaihi          ###   ########.fr        #
+#    Updated: 2021/11/19 10:36:46 by asfaihi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = a.out
 
-SRC = main.cpp
+SRC = main.cpp Converter.cpp
 
-HEADERS = 
+HEADERS = Converter.hpp
 
 OBJECT = $(SRC:%.cpp=%.o)
 
