@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 14:58:47 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/19 11:11:40 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/19 11:59:54 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,30 @@
 
 Converter::Converter( void ) {}
 
-Converter::Converter(std::string Input) {
+Converter::Converter(std::string Input) : _InInt(0), _InChar(0), _InFloat(0), _InDouble(0){
 	this->_Type = this->ParseInput(Input);
-	typedef	void(Converter:: *FunctionPointer)( void );
-	FunctionPointer pointer[4] = {
-		pointer[0] = &Converter::CastFromInt,
-		pointer[1] = &Converter::CastFromChar,
-		pointer[2] = &Converter::CastFromFloat,
-		pointer[3] = &Converter::CastFromDouble
-	};
-
-	char	casts[4] = {'i', 'c', 'f', 'd'};
-
-	for (size_t i = 0; i < 4; i++)
-	{
-		if (casts[i] == this->_Type) {
-			(this->*pointer[i])();
-		}
+	if (this->_Type == 'i') {
+		this->_InInt = std::stoi(Input);
+		this->CastFromInt();
 	}
+
+	else if (this->_Type == 'c') {
+		this->_InChar = Input[0];
+		this->CastFromChar();
+
+	}
+
+	else if (this->_Type == 'f') {
+		this->_InFloat = std::stof(Input);
+		this->CastFromFloat();
+
+	}
+
+	else if (this->_Type == 'd') {
+		this->_InDouble = std::stod(Input);
+		this->CastFromDouble();
+	}
+
 }
 
 Converter::Converter(Converter const & src) { *this = src; }
@@ -62,21 +68,42 @@ char	Converter::ParseInput(std::string Input) {
 }
 
 void	Converter::CastFromInt( void ) {
-	std::cout << "Int";
+	this->_InChar = static_cast<char>(this->_InInt);
+	this->_InFloat = static_cast<float>(this->_InInt);
+	this->_InDouble = static_cast<double>(this->_InInt);
+	std::cout << this->_InInt << std::endl;
+	std::cout << this->_InChar << std::endl;
+	std::cout << this->_InFloat << std::endl;
+	std::cout << this->_InDouble << std::endl;
 }
 
 void	Converter::CastFromChar( void ) {
-	std::cout << "Char";
-	
+	this->_InInt = static_cast<int>(this->_InChar);
+	this->_InFloat = static_cast<float>(this->_InChar);
+	this->_InDouble = static_cast<double>(this->_InChar);
+	std::cout << this->_InInt << std::endl;
+	std::cout << this->_InChar << std::endl;
+	std::cout << this->_InFloat << std::endl;
+	std::cout << this->_InDouble << std::endl;
 }
 
 void	Converter::CastFromFloat( void ) {
-	std::cout << "Float";
-	
+	this->_InInt = static_cast<int>(this->_InFloat);
+	this->_InChar = static_cast<char>(this->_InFloat);
+	this->_InDouble = static_cast<double>(this->_InFloat);
+	std::cout << this->_InInt << std::endl;
+	std::cout << this->_InChar << std::endl;
+	std::cout << this->_InFloat << std::endl;
+	std::cout << this->_InDouble << std::endl;
 }
 
 void	Converter::CastFromDouble( void ) {
-	std::cout << "Double";
-	
+	this->_InInt = static_cast<int>(this->_InDouble);
+	this->_InChar = static_cast<char>(this->_InDouble);
+	this->_InFloat = static_cast<float>(this->_InDouble);
+	std::cout << this->_InInt << std::endl;
+	std::cout << this->_InChar << std::endl;
+	std::cout << this->_InFloat << std::endl;
+	std::cout << this->_InDouble << std::endl;
 }
 
