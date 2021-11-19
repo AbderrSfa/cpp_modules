@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 13:19:26 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/19 10:44:22 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/19 12:17:41 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main(int argc, char **argv)
 {
 	if (argc != 2) {
-		std::cout << "Invalid arguments." << std::endl;
+		std::cout << "Invalid number of arguments." << std::endl;
 		return (1);
 	}
 	Converter	cast(argv[1]);
