@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 14:58:47 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/19 12:16:33 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/21 00:29:53 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,17 +48,43 @@ Converter & Converter::operator=(Converter const & rhs) {
 
 Converter::~Converter() {}
 
-char	Converter::ParseInput(std::string Input) {
-	if (Input.find(".", 0) != std::string::npos) {
-		if (Input[Input.length() - 1] == 'f')
-			return ('f');
-		else
-			return ('d');
-	}
-	else if ((Input.length() == 1) && !isdigit(Input[0]))
-			return ('c');
-	else
+const char * Converter::BadArgument::what() const throw() {
+	return ("Exception: Argument is invalid!");
+}
+
+char	Converter::ParseInput(std::string Input) const {
+	if ((std::count(Input.begin(), Input.end(), '.') > 1)
+		|| ((std::count(Input.begin(), Input.end(), '-') > 1) )
+		|| (std::count(Input.begin(), Input.end(), '+') > 1) )
+		throw BadArgument();
+
+	if (std::isdigit(Input[0])
+		|| (Input[0] == '-' && std::isdigit(Input[1]))
+		|| (Input[0] == '+' && std::isdigit(Input[1])))
+	{
+		if (Input.find(".", 0) != std::string::npos) {
+			if (Input[Input.length() - 1] == 'f') {
+				std::cout << "f" << std::endl;
+				return ('f');
+			}
+			else {
+				std::cout << "d" << std::endl;
+				return ('d');
+			}
+		}
+		else {
+			std::cout << "i" << std::endl;
 			return ('i');
+		}
+	}
+
+	else if ((Input.length() == 1) && !isdigit(Input[0])) {
+		std::cout << "c" << std::endl;
+		return ('c');
+	}
+
+	else
+		throw BadArgument();
 }
 
 void	Converter::CastFromInt(std::string Input) {
@@ -89,3 +115,25 @@ void	Converter::CastFromDouble(std::string Input) {
 	this->_InFloat = static_cast<float>(this->_InDouble);
 }
 
+void	Converter::PrintConversion( void ) const {
+	{
+		std::cout << "char: ";
+		if (!std::isprint(this->_InChar))
+			std::cout << "Non displayable";
+		else
+			std::cout << "'" << this->_InChar << "'";
+		std::cout << std::endl;
+	}
+	{
+		std::cout << "int: ";
+		std::cout << std::endl;
+	}
+	{
+		std::cout << "float: ";
+		std::cout << std::endl;
+	}
+	{
+		std::cout << "double: ";
+		std::cout << std::endl;
+	}
+}
