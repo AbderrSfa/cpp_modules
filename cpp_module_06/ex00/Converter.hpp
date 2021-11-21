@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 14:58:57 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/19 15:06:41 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/21 04:48:28 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ class	Converter
 		Converter & operator=(Converter const & rhs);
 		~Converter();
 
-		void	PrintConversion( void ) const ;
+		void	PrintConversion(std::string Input) const ;
 };
 
 #endif

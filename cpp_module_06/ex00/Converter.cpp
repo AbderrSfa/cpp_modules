@@ -6,11 +6,12 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 14:58:47 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/21 04:25:37 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/21 05:57:51 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Converter.hpp"
+#include <cmath>
 
 Converter::Converter( void ) {}
 
@@ -54,6 +55,9 @@ const char * Converter::BadArgument::what() const throw() {
 }
 
 char	Converter::ParseInput(std::string Input) const {
+	if (Input == "nanf" || Input == "-inff" || Input == "+inff"
+		|| Input == "nan" || Input == "-inf" || Input == "+inf")
+		return ('z');
 	if ((std::count(Input.begin(), Input.end(), '.') > 1)
 		|| ((std::count(Input.begin(), Input.end(), '-') > 1) )
 		|| (std::count(Input.begin(), Input.end(), '+') > 1)
@@ -111,10 +115,17 @@ void	Converter::CastFromDouble(std::string Input) {
 	this->_InFloat = static_cast<float>(this->_InDouble);
 }
 
-void	Converter::PrintConversion( void ) const {
+int count_digit( int Input ) {
+   return int(log10(Input) + 1);
+}
+
+void	Converter::PrintConversion(std::string Input) const {
 	{
 		std::cout << "char: ";
-		if (!std::isprint(this->_InChar))
+		if (Input == "nan" || Input == "+inf" || Input == "-inf" ||
+			Input == "nanf" || Input == "+inff" || Input == "-inff")
+			std::cout << "impossible";
+		else if (!std::isprint(this->_InChar))
 			std::cout << "Non displayable";
 		else
 			std::cout << "'" << this->_InChar << "'";
@@ -122,14 +133,63 @@ void	Converter::PrintConversion( void ) const {
 	}
 	{
 		std::cout << "int: ";
+		if (Input == "nan" || Input == "+inf" || Input == "-inf" ||
+			Input == "nanf" || Input == "+inff" || Input == "-inff")
+			std::cout << "impossible";
+		else
+			std::cout << this->_InInt;
 		std::cout << std::endl;
 	}
 	{
 		std::cout << "float: ";
+		if (Input == "nan" || Input == "+inf" || Input == "-inf")
+			std::cout << Input + "f";
+		else if (Input == "nanf" || Input == "+inff" || Input == "-inff")
+			std::cout << Input;
+		else
+		{
+			if (this->_Type == 'f')
+				Input.erase(Input.length() - 1);
+			std::string fs = std::to_string(this->_InFloat);
+			if (Input.find(".") == std::string::npos)
+			{
+				if (this->_Type == 'c')
+					std::cout << fs.erase(count_digit(Input[0]) + 2) + "f";
+				std::cout << fs.erase(Input.length() + 2) + "f";
+			}
+			int DBFP = Input.substr(1, Input.find(".")).length();
+			int DAFP = Input.substr(Input.find("."), Input.length()).length();
+			if (DAFP > 7)
+				DAFP = 7;
+			std::cout << fs.erase(DAFP + DBFP) + "f";
+		}
 		std::cout << std::endl;
 	}
 	{
+		if (this->_Type == 'f')
+			Input.erase(Input.length() - 1);
 		std::cout << "double: ";
+		if (Input == "nan" || Input == "+inf" || Input == "-inf")
+			std::cout << Input;
+		else if (Input == "+inff" || Input == "-inff")
+			std::cout << Input.erase(4);
+		else if (Input == "nanf")
+			std::cout << "nan";
+		else
+		{
+			std::string ds = std::to_string(this->_InDouble);
+			if (Input.find(".") == std::string::npos)
+			{
+				if (this->_Type == 'c')
+					std::cout << ds.erase(count_digit(Input[0]) + 2);
+				std::cout << ds.erase(Input.length() + 2);
+			}
+			int DBFP = Input.substr(1, Input.find(".")).length();
+			int DAFP = Input.substr(Input.find("."), Input.length()).length();
+			if (DAFP > 7)
+				DAFP = 7;
+			std::cout << ds.erase(DAFP + DBFP);
+		}
 		std::cout << std::endl;
 	}
 }
