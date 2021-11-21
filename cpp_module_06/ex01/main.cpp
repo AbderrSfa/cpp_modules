@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include <stdint.h>
 
 struct Data
 {
@@ -39,9 +40,11 @@ int main()
 
 	std::cout << data.number << std::endl;
 	std::cout << data.character << std::endl;
+
 	std::cout << std::endl;
 	raw = serialize(&data);
 	ptr = deserialize(raw);
+
 	std::cout << ptr->number << std::endl;
 	std::cout << ptr->character << std::endl;
 
