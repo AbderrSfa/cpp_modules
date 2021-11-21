@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 14:58:47 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/21 00:29:53 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/21 04:25:37 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ Converter::Converter( void ) {}
 
 Converter::Converter(std::string Input) : _InInt(0), _InChar(0), _InFloat(0), _InDouble(0){
 	this->_Type = this->ParseInput(Input);
+	std::cout << this->_Type << std::endl;
 	typedef	void(Converter:: *FunctionPointer)(std::string Input);
 	FunctionPointer pointer[4] = {
 		pointer[0] = &Converter::CastFromInt,
@@ -55,34 +56,29 @@ const char * Converter::BadArgument::what() const throw() {
 char	Converter::ParseInput(std::string Input) const {
 	if ((std::count(Input.begin(), Input.end(), '.') > 1)
 		|| ((std::count(Input.begin(), Input.end(), '-') > 1) )
-		|| (std::count(Input.begin(), Input.end(), '+') > 1) )
+		|| (std::count(Input.begin(), Input.end(), '+') > 1)
+		|| (Input[Input.length() - 1] == '.' && Input.length() > 1))
 		throw BadArgument();
 
 	if (std::isdigit(Input[0])
 		|| (Input[0] == '-' && std::isdigit(Input[1]))
 		|| (Input[0] == '+' && std::isdigit(Input[1])))
 	{
-		if (Input.find(".", 0) != std::string::npos) {
-			if (Input[Input.length() - 1] == 'f') {
-				std::cout << "f" << std::endl;
-				return ('f');
-			}
-			else {
-				std::cout << "d" << std::endl;
-				return ('d');
-			}
+		int	i = 0;
+		while (std::isdigit(Input[i]) || Input[i] == '.') {
+			i++;
 		}
-		else {
-			std::cout << "i" << std::endl;
+		if (Input[i] == 'f' && Input[i + 1] == '\0')
+			return ('f');
+		else if (Input[i] == '\0' && std::count(Input.begin(), Input.end(), '.'))
+			return ('d');
+		else if (Input[i] == '\0')
 			return ('i');
-		}
+		else
+			throw BadArgument();
 	}
-
-	else if ((Input.length() == 1) && !isdigit(Input[0])) {
-		std::cout << "c" << std::endl;
+	else if ((Input.length() == 1) && !isdigit(Input[0]))
 		return ('c');
-	}
-
 	else
 		throw BadArgument();
 }
