@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 06:56:31 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/21 07:10:34 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/22 11:32:44 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,16 @@
 
 struct Data
 {
-	int		number;
+	int		num;
 	char	character;
+	float	fl;
 };
 
-uintptr_t serialize(Data* ptr)
-{
+uintptr_t serialize(Data* ptr) {
 	return (reinterpret_cast<uintptr_t>(ptr));
 }
 
-Data* deserialize(uintptr_t raw)
-{
+Data* deserialize(uintptr_t raw) {
 	return (reinterpret_cast<Data *>(raw));
 }
 
@@ -35,18 +34,21 @@ int main()
 	Data *ptr;
 	uintptr_t raw;
 
-	data.number = 42;
+	data.num = 42;
 	data.character = 'A';
+	data.fl = 42.42;
 
-	std::cout << data.number << std::endl;
+	std::cout << data.num << std::endl;
 	std::cout << data.character << std::endl;
+	std::cout << data.fl << std::endl;
 
 	std::cout << std::endl;
 	raw = serialize(&data);
 	ptr = deserialize(raw);
 
-	std::cout << ptr->number << std::endl;
+	std::cout << ptr->num << std::endl;
 	std::cout << ptr->character << std::endl;
+	std::cout << ptr->fl << std::endl;
 
 
 	return (0);
