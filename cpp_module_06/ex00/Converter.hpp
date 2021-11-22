@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 14:58:57 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/21 04:48:28 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/22 10:48:48 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define CONVERTER_HPP
 
 # include <iostream>
+# include <cmath>
+# include <iomanip>
 
 class	Converter
 {
@@ -42,7 +44,10 @@ class	Converter
 		Converter & operator=(Converter const & rhs);
 		~Converter();
 
-		void	PrintConversion(std::string Input) const ;
+		void	PrintChar(std::string Input) const ;
+		void	PrintInt(std::string Input) const ;
+		void	PrintFloat(std::string Input) const ;
+		void	PrintDouble(std::string Input) const ;
 };
 
 #endif
