@@ -6,24 +6,26 @@
 #    By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 13:05:38 by asfaihi           #+#    #+#              #
-#    Updated: 2021/11/21 06:56:20 by asfaihi          ###   ########.fr        #
+#    Updated: 2021/11/22 11:51:32 by asfaihi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = a.out
 
-SRC = main.cpp
+SRC = main.cpp 
 
 OBJECT = $(SRC:%.cpp=%.o)
 
 FLAGS = -Wall -Wextra -Werror
+
+HEADERS = Base.hpp
 
 all: $(NAME)
 
 $(NAME): $(OBJECT)
 	clang++ $(OBJECT) -o $(NAME)
 
-%.o:%.cpp
+%.o:%.cpp $(HEADERS)
 	clang++ $(FLAGS) -std=c++98 -c $<
 
 clean:
