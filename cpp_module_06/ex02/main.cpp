@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 06:56:31 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/22 12:22:20 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/22 13:31:48 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ Base *	generate( void ) {
 }
 
 void	identify(Base* p) {
-	if (dynamic_cast<A*>(p) != nullptr)
+	if (dynamic_cast<A*>(p) != NULL)
 		std::cout << "A" << std::endl;
-	if (dynamic_cast<B*>(p) != nullptr)
+	if (dynamic_cast<B*>(p) != NULL)
 		std::cout << "B" << std::endl;
-	if (dynamic_cast<C*>(p) != nullptr)
+	if (dynamic_cast<C*>(p) != NULL)
 		std::cout << "C" << std::endl;
 }
 
