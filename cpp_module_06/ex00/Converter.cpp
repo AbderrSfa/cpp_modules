@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 14:58:47 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/22 10:48:52 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/23 09:55:47 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ char	Converter::ParseInput(std::string Input) const {
 		|| (Input[0] == '+' && std::isdigit(Input[1])))
 	{
 		int	i = 0;
+		if (Input[i] == '-' || Input[i] == '+')
+			i++;
 		while (std::isdigit(Input[i]) || Input[i] == '.') {
 			i++;
 		}
