@@ -6,50 +6,31 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:30:50 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/22 16:43:08 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/23 14:22:53 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "iter.hpp"
 
-template<typename T>
-void	swap(T& a, T& b) {
-	T	temp(a);
-	a = b;
-	b = temp;
-}
-
-template<typename T>
-T		min(T& a, T& b) {
-	if (b <= a)
-		return (b);
-	return (a);
-}
-
-template<typename T>
-T		max(T& a, T& b) {
-	if (b >= a)
-		return (b);
-	return (a);		
-}
-
-int main(void)
+class Awesome
 {
-	int a = 2;
-	int b = 3;
+	public:
+		Awesome( void ) : _n( 42 ) { return; }
+		int get( void ) const { return this->_n; }
+	private:
+		int _n;
+};
+std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
 
-	::swap( a, b );
-	std::cout << "a = " << a << ", b = " << b << std::endl;
-	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+template< typename T >
+void print( T const & x ) { std::cout << x << std::endl; return; }
 
-	std::string c = "chaine1";
-	std::string d = "chaine2";
+int main() {
+	int tab[] = { 0, 1, 2, 3, 4 };
+	Awesome tab2[5];
 
-	::swap(c, d);
-	std::cout << "c = " << c << ", d = " << d << std::endl;
-	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+	iter( tab, 5, print );
+	iter( tab2, 5, print );
 
-	return (0);
+	return 0;
 }
