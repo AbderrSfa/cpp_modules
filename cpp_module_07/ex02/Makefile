@@ -6,7 +6,7 @@
 #    By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 13:05:38 by asfaihi           #+#    #+#              #
-#    Updated: 2021/11/23 16:06:36 by asfaihi          ###   ########.fr        #
+#    Updated: 2021/11/23 16:06:58 by asfaihi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJECT = $(SRC:%.cpp=%.o)
 
 FLAGS = -Wall -Wextra -Werror
 
-HEADERS = iter.hpp
+HEADERS = Array.hpp
 
 all: $(NAME)
 

@@ -6,7 +6,7 @@
 #    By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 13:05:38 by asfaihi           #+#    #+#              #
-#    Updated: 2021/11/22 15:31:58 by asfaihi          ###   ########.fr        #
+#    Updated: 2021/11/23 16:06:44 by asfaihi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,14 +18,12 @@ OBJECT = $(SRC:%.cpp=%.o)
 
 FLAGS = -Wall -Wextra -Werror
 
-HEADERS = 
-
 all: $(NAME)
 
 $(NAME): $(OBJECT)
 	clang++ $(OBJECT) -o $(NAME)
 
-%.o:%.cpp $(HEADERS)
+%.o:%.cpp
 	clang++ $(FLAGS) -std=c++98 -c $<
 
 clean:
