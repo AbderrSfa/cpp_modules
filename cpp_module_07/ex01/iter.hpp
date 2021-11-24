@@ -15,7 +15,7 @@
 
 # include <iostream>
 
-template<typename T>
+template< typename T >
 void	iter(T *arr, size_t size, void (*funct_ptr)(T const &val)) {
 	for (size_t i = 0; i < size; i++) {
 		(*funct_ptr)(arr[i]);

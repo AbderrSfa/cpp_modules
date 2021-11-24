@@ -16,7 +16,7 @@
 # include <iostream>
 # include <cstdlib>
 
-template<typename T>
+template< typename T >
 class Array
 {
 	private:
@@ -24,15 +24,17 @@ class Array
 		unsigned int	_Size;
 
 	public:
-		Array() : _Arr(0), _Size(0) {};
+		Array() : _Arr(NULL), _Size(0) {};
 		Array(unsigned int n) : _Arr(new T[n]), _Size(n) {}
-		Array(Array const & src) { *this = src; }
+		Array(Array const & src) : _Arr(NULL), _Size(0) { *this = src; }
 		~Array() { delete [] this->_Arr; };
 
 		Array & operator=(Array const & rhs) {
 			if (this == &rhs)
 				return (*this);
 			this->_Size = rhs._Size;
+			if (this->_Arr)
+				delete [] this->_Arr;
 			this->_Arr = new T[this->_Size];
 			for (size_t i = 0; i < this->_Size; i++) {
 				this->_Arr[i] = rhs._Arr[i];
@@ -46,25 +48,26 @@ class Array
 			}
 		};
 
-		T &			operator[](unsigned int index) {
+		T &			operator[](unsigned int index) const {
 			if (index >= this->_Size)
 				throw OutOfLimits();
 			return (this->_Arr[index]);
 		};
 
-		const T &	operator[](unsigned int index) const {
-			if (index >= this->_Size)
-				throw OutOfLimits();
-			return (this->_Arr[index]);
-		};
+		// const T &	operator[](unsigned int index) const {
+		// 	if (index >= this->_Size)
+		// 		throw OutOfLimits();
+		// 	return (this->_Arr[index]);
+		// };
 
-		unsigned int size() const { return (this->_size); };
+		unsigned int size() const { return (this->_Size); };
 
 		void	print( void ) {
-			for (size_t i = 0; i < 4; i++)
+			for (size_t i = 0; i < this->_Size; i++)
 			{
 				std::cout << this->_Arr[i] << " ";
 			}
+			std::cout << std::endl;
 		};
 };
 
