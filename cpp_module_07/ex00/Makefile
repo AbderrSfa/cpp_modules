@@ -18,12 +18,14 @@ OBJECT = $(SRC:%.cpp=%.o)
 
 FLAGS = -Wall -Wextra -Werror
 
+HEADERS = whatever.hpp
+
 all: $(NAME)
 
 $(NAME): $(OBJECT)
 	clang++ $(OBJECT) -o $(NAME)
 
-%.o:%.cpp
+%.o:%.cpp $(HEADERS)
 	clang++ $(FLAGS) -std=c++98 -c $<
 
 clean:
