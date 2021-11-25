@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:06:22 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/23 17:01:16 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/25 10:24:40 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,21 +54,7 @@ class Array
 			return (this->_Arr[index]);
 		};
 
-		// const T &	operator[](unsigned int index) const {
-		// 	if (index >= this->_Size)
-		// 		throw OutOfLimits();
-		// 	return (this->_Arr[index]);
-		// };
-
 		unsigned int size() const { return (this->_Size); };
-
-		void	print( void ) {
-			for (size_t i = 0; i < this->_Size; i++)
-			{
-				std::cout << this->_Arr[i] << " ";
-			}
-			std::cout << std::endl;
-		};
 };
 
 #endif
