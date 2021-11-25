@@ -15,10 +15,13 @@
 
 # include <iostream>
 # include <vector>
+# include <algorithm>
+# include <limits.h>
 
 class Span
 {
 	private:
+		std::vector<int>	_vect;
 		unsigned int		_N;
 		Span( void );
 
@@ -40,11 +43,19 @@ class Span
 			}
 		};
 
+		// template<typename T>
+		// void	addNumber(T start, T end)
+		// {
+		// 	int dist = std::distance(start, end);
+		// 	if (dist + this->_vect.size() > this->_N)
+		// 		throw Span::ContainerFull();
+		// 	this->_vect.insert(this->_vect.end(), start, end);
+		// }
+
 		void	addNumber(int num);
 		int		shortestSpan( void );
 		int		longestSpan( void );
 
-		std::vector<int>	*_vect;
 };
 
 #endif
