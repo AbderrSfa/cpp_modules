@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 16:16:55 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/26 13:21:53 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/26 14:32:13 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class MutantStack : public std::stack<T, Container>
 		~MutantStack() {}
 		MutantStack & operator=(MutantStack const & rhs) { return (*this); };
 
-		typedef typename std::stack<T, Container>::container_type::iterator	iterator;
-
+		typedef typename std::stack<T, Container>::container_type::iterator iterator;
+		
 		iterator begin() { return this->c.begin(); }
 		iterator end() { return this->c.end(); }
 };
