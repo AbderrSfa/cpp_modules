@@ -22,10 +22,15 @@ template < typename T, typename Container = std::deque<T> >
 class MutantStack : public std::stack<T, Container>
 {
 	public:
-		MutantStack( void ) {}
-		MutantStack(MutantStack const & src) { *this = src; } ;
+		MutantStack( void ) : std::stack<T, Container> {}
+		MutantStack(MutantStack const & src) : std::stack<T, Container>(src) ;
 		~MutantStack() {}
-		MutantStack & operator=(MutantStack const & rhs) { return (*this); };
+		MutantStack & operator=(MutantStack const & rhs) {
+			if (this == &rhs)
+				return (*this);
+			this->c = rhs.c;
+			return (*this);
+		};
 
 		typedef typename std::stack<T, Container>::container_type::iterator iterator;
 		
