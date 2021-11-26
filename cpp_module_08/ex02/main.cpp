@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 16:16:52 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/26 14:05:53 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/26 15:06:55 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int main()
 		}
 	}
 
+	std::cout << std::endl;
 	std::cout << "-------------" << std::endl;
 
 	{
@@ -61,6 +62,33 @@ int main()
 
 		MutantStack<std::string>::iterator it = mstack.begin();
 		MutantStack<std::string>::iterator ite = mstack.end();
+
+		++it;
+		--it;
+		while (it != ite)
+		{
+			std::cout << *it << std::endl;
+			++it;
+		}
+	}
+
+	std::cout << std::endl;
+	std::cout << "-------------" << std::endl;
+
+	{
+		MutantStack<float, std::vector<float> > mstack;
+
+		mstack.push(5.56);
+		mstack.push(17.44);
+		mstack.push(3.0);
+		mstack.push(5.23);
+		mstack.push(737.1);
+		mstack.push(0);
+
+		std::cout << std::endl;
+
+		MutantStack<float, std::vector<float> >::iterator it = mstack.begin();
+		MutantStack<float, std::vector<float> >::iterator ite = mstack.end();
 
 		++it;
 		--it;
