@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 13:18:08 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/26 10:56:33 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/26 11:42:16 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		Span::shortestSpan( void ) {
 	int ret = INT_MAX;
 	for (size_t i = 0; i < sorted.size() - 1; i++)
 		if (sorted.at(i + 1) - sorted.at(i) < ret)
-			ret = sorted.at(i + 1) - sorted.at(i);=
+			ret = sorted.at(i + 1) - sorted.at(i);
 	return (ret);
 }
 
