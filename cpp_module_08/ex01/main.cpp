@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 13:18:06 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/25 16:10:58 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/26 10:55:48 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int		main() {
 		sp.addNumber(11);
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
-
 	}
 	catch(const std::exception& e) {
 		std::cerr << e.what() << '\n';

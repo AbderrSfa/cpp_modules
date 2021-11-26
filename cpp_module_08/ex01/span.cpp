@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 13:18:08 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/25 16:10:44 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/26 10:56:33 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,12 @@ void	Span::addNumber(int num) {
 int		Span::shortestSpan( void ) {
 	if (this->_vect.size() <= 1)
 		throw NotEnoughNumbers();
+	std::vector<int>	sorted = this->_vect;
+	std::sort(sorted.begin(), sorted.end());
 	int ret = INT_MAX;
-
-	for (size_t i = 0; i < this->_vect.size() - 1; i++)
-	{
-		for (size_t j = i + 1; j < this->_vect.size(); j++)
-		{
-			if (abs(this->_vect.at(i) - this->_vect.at(j)) < ret)
-				ret = abs(this->_vect.at(i) - this->_vect.at(j));
-		}	
-	}
+	for (size_t i = 0; i < sorted.size() - 1; i++)
+		if (sorted.at(i + 1) - sorted.at(i) < ret)
+			ret = sorted.at(i + 1) - sorted.at(i);=
 	return (ret);
 }
 
