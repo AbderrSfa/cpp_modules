@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 13:18:06 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/26 11:52:32 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/27 09:30:04 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int		main() {
 	catch(const std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}
+
+	std::cout << std::endl;
 
 	try {
 		std::vector<int>	buffer;

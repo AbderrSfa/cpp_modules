@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 16:16:55 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/26 14:57:39 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/27 09:33:11 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ template < typename T, typename Container = std::deque<T> >
 class MutantStack : public std::stack<T, Container>
 {
 	public:
-		MutantStack( void ) : std::stack<T, Container> {}
-		MutantStack(MutantStack const & src) : std::stack<T, Container>(src) ;
+		MutantStack( void ) : std::stack<T, Container>() {}
+		MutantStack(MutantStack const & src) : std::stack<T, Container>(src) {}
 		~MutantStack() {}
 		MutantStack & operator=(MutantStack const & rhs) {
 			if (this == &rhs)

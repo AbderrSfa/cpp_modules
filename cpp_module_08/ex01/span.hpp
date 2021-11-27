@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 13:05:10 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/11/26 11:46:51 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/11/27 09:28:06 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ class Span
 		void	addNumber(int num);
 		int		shortestSpan( void );
 		int		longestSpan( void );
-
 };
 
 #endif
