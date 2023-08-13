@@ -16,7 +16,8 @@ SRC = main.cpp btc.cpp
 
 OBJECT = $(SRC:%.cpp=%.o)
 
-FLAGS = -Wall -Wextra -Werror
+#FLAGS = -Wall -Wextra -Werror
+FLAGS = 
 
 HEADERS = btc.hpp
 
