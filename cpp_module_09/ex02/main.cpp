@@ -6,50 +6,40 @@
 /*   By: abderr <abderr@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 12:11:30 by asfaihi           #+#    #+#             */
-/*   Updated: 2023/09/01 17:12:46 by abderr           ###   ########.fr       */
+/*   Updated: 2023/09/23 20:01:40 by abderr           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-void mergeSort(std::vector<int> &arr)
+bool valid_number(std::string str)
 {
-
+	for (size_t i = 0; i < str.length(); i++)
+	{
+		if (!isdigit(str[i]))
+			return false;
+	}
+	return true;
 }
 
-void insertionSort(std::vector<int> &arr)
+void ft_error()
 {
-  for (size_t i = 0; i < arr.size(); i++)
-  {
-    int curr = arr[i];
-    std::vector<int>::iterator it = std::upper_bound(arr.begin(), arr.begin() + i, curr);
-    arr.insert(it, curr);
-    arr.erase(arr.begin() + i + 1);
-  }
+	std::cout << "Error" << std::endl;
+	exit(1);
 }
 
-int main()
+int main(int argc, char **argv)
 {
-  std::vector<int> arr;
-  arr.push_back(9);
-  arr.push_back(3);
-  arr.push_back(6);
-  arr.push_back(2);
-  arr.push_back(8);
-  arr.push_back(5);
-  arr.push_back(1);
-  arr.push_back(4);
-  arr.push_back(7);
-
-  // insertionSort(arr);
-
-  mergeSort(arr);
-
-  for (size_t i = 0; i < arr.size(); ++i)
-  {
-    std::cout << arr[i] << " ";
-  }
-  std::cout << std::endl;
-
-  return 0;
+	std::vector<int> arr;
+	if (argc < 2)
+		ft_error();
+	for (int i = 1; i < argc; i++)
+	{
+		int temp = 0;
+		if (!valid_number(argv[i]) || (temp = std::atoi(argv[i])) < 0)
+			ft_error();
+		arr.push_back(temp);
+	}
+	PMergeMe pm(arr);
+	return 0;
 }
