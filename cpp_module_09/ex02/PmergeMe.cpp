@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abderr <abderr@student.42.fr>              +#+  +:+       +#+        */
+/*   By: abderrsfa <abderrsfa@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 22:59:16 by abderr            #+#    #+#             */
-/*   Updated: 2023/09/23 19:42:54 by abderr           ###   ########.fr       */
+/*   Updated: 2023/09/25 22:42:09 by abderrsfa        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,18 @@ PMergeMe::PMergeMe(void) {}
 PMergeMe::PMergeMe(std::vector<int> array)
 {
 	this->print_before_sort(array);
-	std::chrono::high_resolution_clock::time_point start_time = std::chrono::high_resolution_clock::now();
+	clock_t start_time = clock();
 	this->vec = this->mergeInsertionSortV(array);
-	std::chrono::high_resolution_clock::time_point end_time = std::chrono::high_resolution_clock::now();
-	std::chrono::microseconds vecDuration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
+	double vecDuration = double(clock() - start_time) / 1000;
 
 	std::deque<int> deq(array.begin(), array.end());
-	start_time = std::chrono::high_resolution_clock::now();
+	start_time = clock();
 	this->deq = this->mergeInsertionSortD(deq);
-	end_time = std::chrono::high_resolution_clock::now();
-	std::chrono::microseconds deqDuration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
+	double deqDuration = double(clock() - start_time) / 1000;
+
 	this->print_after_sort();
-	std::cout << "Time to process a range of " << array.size() << " elements with std::vector: " << vecDuration.count() << "mcs" << std::endl;
-	std::cout << "Time to process a range of " << array.size() << " elements with std::deque: " << deqDuration.count() << "mcs" << std::endl;
+	std::cout << "Time to process a range of " << array.size() << " elements with std::vector: " << vecDuration << "mcs" << std::endl;
+	std::cout << "Time to process a range of " << array.size() << " elements with std::deque: " << deqDuration << "mcs" << std::endl;
 }
 
 PMergeMe::PMergeMe(PMergeMe const &src)

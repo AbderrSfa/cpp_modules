@@ -6,7 +6,7 @@
 /*   By: abderrsfa <abderrsfa@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:42:05 by asfaihi           #+#    #+#             */
-/*   Updated: 2023/09/24 23:52:18 by abderrsfa        ###   ########.fr       */
+/*   Updated: 2023/09/25 22:15:28 by abderrsfa        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,13 +123,13 @@ bool BitcoinExchange::is_valid_entry(const std::string &line, std::string &date,
 	if (line == "")
 		return false;
 	std::vector<std::string> date_and_val = ft_split(remove_spaces(line), '|');
-	date = date_and_val[0];
-	std::string val = date_and_val[1];
 	if (date_and_val.size() != 2)
 	{
-		ft_error("Error: bad input => " + date, false);
+		ft_error("Error: bad input => " + line, false);
 		return false;
 	}
+	date = date_and_val[0];
+	std::string val = date_and_val[1];
 	Date s_date;
 	if (get_date(date_and_val[0], s_date) == -1)
 		return false;
